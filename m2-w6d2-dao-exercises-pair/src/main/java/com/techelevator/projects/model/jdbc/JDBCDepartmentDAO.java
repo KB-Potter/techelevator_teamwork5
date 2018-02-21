@@ -57,7 +57,7 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 	public void updateDepartmentName(Long departmentId, String departmentName) {
 		String sqlupdateDepartmentName = " UPDATE department " +
 				" SET name = ? " + " WHERE department_id = ? ";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlupdateDepartmentName, departmentName, departmentId);
+		jdbcTemplate.queryForRowSet(sqlupdateDepartmentName, departmentName, departmentId);
 
 	}
 

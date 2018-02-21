@@ -74,18 +74,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JDBCProjectDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JDBCProjectDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="26">
+              <caret line="43" column="58" lean-forward="false" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#475#476#0" expanded="true" />
                 <element signature="e#530#531#0" expanded="true" />
-                <marker date="1519253495104" expanded="true" signature="708:774" ph="SELECT proje... project" />
-                <marker date="1519253495104" expanded="true" signature="1107:1166" ph="DELETE FROM project_employee... " />
-                <marker date="1519253495104" expanded="true" signature="1366:1446" ph="UPDATE project_employee... " />
+                <marker date="1519257272452" expanded="true" signature="708:715" ph="SELECT * FRO... project" />
+                <marker date="1519257272452" expanded="true" signature="708:774" ph="SELECT proje... project" />
+                <marker date="1519257272452" expanded="true" signature="708:836" ph="SELECT proje... project" />
+                <marker date="1519257272452" expanded="true" signature="1171:1250" ph="DELETE FROM project_employee... " />
+                <marker date="1519257272452" expanded="true" signature="1449:1472" ph="INSERT INTO project_employee... " />
+                <marker date="1519257272452" expanded="true" signature="1449:1508" ph="INSERT INTO project_employee... " />
+                <marker date="1519257272452" expanded="true" signature="1449:1529" ph="INSERT INTO project_employee... " />
               </folding>
             </state>
           </provider>
@@ -101,21 +105,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JDBCDepartmentDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JDBCDepartmentDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="95" column="1" lean-forward="false" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+            <state relative-caret-position="434">
+              <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="67" selection-end-column="33" />
               <folding>
                 <element signature="e#539#540#0" expanded="true" />
                 <element signature="e#594#595#0" expanded="true" />
-                <element signature="e#2318#2319#0" expanded="true" />
-                <element signature="e#2336#2337#0" expanded="true" />
-                <marker date="1519253545778" expanded="true" signature="782:834" ph="SELECT depar... department" />
-                <marker date="1519253545778" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
-                <marker date="1519253545778" expanded="true" signature="1697:1767" ph="UPDATE department... " />
-                <marker date="1519253545778" expanded="true" signature="2034:2100" ph="INSERT INTO department... " />
-                <marker date="1519253545778" expanded="true" signature="2694:2729" ph="SELECT nextv... " />
+                <element signature="e#2298#2299#0" expanded="true" />
+                <element signature="e#2316#2317#0" expanded="true" />
+                <marker date="1519253798470" expanded="true" signature="782:834" ph="SELECT depar... department" />
+                <marker date="1519253798470" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
+                <marker date="1519253798470" expanded="true" signature="1697:1767" ph="UPDATE department... " />
+                <marker date="1519253798470" expanded="true" signature="2014:2080" ph="INSERT INTO department... " />
+                <marker date="1519253798470" expanded="true" signature="2674:2709" ph="SELECT nextv... " />
               </folding>
             </state>
           </provider>
@@ -124,8 +128,8 @@
       <file leaf-file-name="JDBCEmployeeDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="58" column="52" lean-forward="true" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
+            <state relative-caret-position="390">
+              <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding>
                 <element signature="e#480#481#0" expanded="true" />
                 <element signature="e#535#536#0" expanded="true" />
@@ -144,22 +148,9 @@
       <file leaf-file-name="ProjectsCLI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/ProjectsCLI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="306" column="0" lean-forward="true" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+            <state relative-caret-position="261">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="210">
-                <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -191,9 +182,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/DepartmentDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java" />
       </list>
     </option>
   </component>
@@ -215,8 +206,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="19" />
-    <option name="y" value="46" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="824" />
   </component>
@@ -474,12 +464,12 @@
       <workItem from="1519231149073" duration="1856000" />
       <workItem from="1519240402941" duration="2454000" />
       <workItem from="1519243422569" duration="2632000" />
-      <workItem from="1519246094967" duration="5743000" />
+      <workItem from="1519246094967" duration="9483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34576000" />
+    <option name="totallyTimeSpent" value="38316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="6" />
@@ -502,7 +492,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24965706" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30864197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -528,14 +518,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/DepartmentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/EmployeeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -552,9 +534,13 @@
             <element signature="imports" expanded="true" />
             <element signature="e#475#476#0" expanded="true" />
             <element signature="e#530#531#0" expanded="true" />
-            <marker date="1519253495104" expanded="true" signature="708:774" ph="SELECT proje... project" />
-            <marker date="1519253495104" expanded="true" signature="1107:1166" ph="DELETE FROM project_employee... " />
-            <marker date="1519253495104" expanded="true" signature="1366:1446" ph="UPDATE project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="708:715" ph="SELECT * FRO... project" />
+            <marker date="1519257272452" expanded="true" signature="708:774" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="708:836" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="1171:1250" ph="DELETE FROM project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1472" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1508" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1529" ph="INSERT INTO project_employee... " />
           </folding>
         </state>
       </provider>
@@ -619,13 +605,13 @@
           <folding>
             <element signature="e#539#540#0" expanded="true" />
             <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
-            <marker date="1519253545778" expanded="true" signature="782:834" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1697:1767" ph="UPDATE department... " />
-            <marker date="1519253545778" expanded="true" signature="2034:2100" ph="INSERT INTO department... " />
-            <marker date="1519253545778" expanded="true" signature="2694:2729" ph="SELECT nextv... " />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2316#2317#0" expanded="true" />
+            <marker date="1519253798470" expanded="true" signature="782:834" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1697:1767" ph="UPDATE department... " />
+            <marker date="1519253798470" expanded="true" signature="2014:2080" ph="INSERT INTO department... " />
+            <marker date="1519253798470" expanded="true" signature="2674:2709" ph="SELECT nextv... " />
           </folding>
         </state>
       </provider>
@@ -662,9 +648,13 @@
             <element signature="imports" expanded="true" />
             <element signature="e#475#476#0" expanded="true" />
             <element signature="e#530#531#0" expanded="true" />
-            <marker date="1519253495104" expanded="true" signature="708:774" ph="SELECT proje... project" />
-            <marker date="1519253495104" expanded="true" signature="1107:1166" ph="DELETE FROM project_employee... " />
-            <marker date="1519253495104" expanded="true" signature="1366:1446" ph="UPDATE project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="708:715" ph="SELECT * FRO... project" />
+            <marker date="1519257272452" expanded="true" signature="708:774" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="708:836" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="1171:1250" ph="DELETE FROM project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1472" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1508" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1529" ph="INSERT INTO project_employee... " />
           </folding>
         </state>
       </provider>
@@ -718,13 +708,13 @@
           <folding>
             <element signature="e#539#540#0" expanded="true" />
             <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
-            <marker date="1519253545778" expanded="true" signature="782:834" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1697:1767" ph="UPDATE department... " />
-            <marker date="1519253545778" expanded="true" signature="2034:2100" ph="INSERT INTO department... " />
-            <marker date="1519253545778" expanded="true" signature="2694:2729" ph="SELECT nextv... " />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2316#2317#0" expanded="true" />
+            <marker date="1519253798470" expanded="true" signature="782:834" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1697:1767" ph="UPDATE department... " />
+            <marker date="1519253798470" expanded="true" signature="2014:2080" ph="INSERT INTO department... " />
+            <marker date="1519253798470" expanded="true" signature="2674:2709" ph="SELECT nextv... " />
           </folding>
         </state>
       </provider>
@@ -772,9 +762,13 @@
             <element signature="imports" expanded="true" />
             <element signature="e#475#476#0" expanded="true" />
             <element signature="e#530#531#0" expanded="true" />
-            <marker date="1519253495104" expanded="true" signature="708:774" ph="SELECT proje... project" />
-            <marker date="1519253495104" expanded="true" signature="1107:1166" ph="DELETE FROM project_employee... " />
-            <marker date="1519253495104" expanded="true" signature="1366:1446" ph="UPDATE project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="708:715" ph="SELECT * FRO... project" />
+            <marker date="1519257272452" expanded="true" signature="708:774" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="708:836" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="1171:1250" ph="DELETE FROM project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1472" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1508" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1529" ph="INSERT INTO project_employee... " />
           </folding>
         </state>
       </provider>
@@ -786,13 +780,13 @@
           <folding>
             <element signature="e#539#540#0" expanded="true" />
             <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
-            <marker date="1519253545778" expanded="true" signature="782:834" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1697:1767" ph="UPDATE department... " />
-            <marker date="1519253545778" expanded="true" signature="2034:2100" ph="INSERT INTO department... " />
-            <marker date="1519253545778" expanded="true" signature="2694:2729" ph="SELECT nextv... " />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2316#2317#0" expanded="true" />
+            <marker date="1519253798470" expanded="true" signature="782:834" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1697:1767" ph="UPDATE department... " />
+            <marker date="1519253798470" expanded="true" signature="2014:2080" ph="INSERT INTO department... " />
+            <marker date="1519253798470" expanded="true" signature="2674:2709" ph="SELECT nextv... " />
           </folding>
         </state>
       </provider>
@@ -863,9 +857,13 @@
             <element signature="imports" expanded="true" />
             <element signature="e#475#476#0" expanded="true" />
             <element signature="e#530#531#0" expanded="true" />
-            <marker date="1519253495104" expanded="true" signature="708:774" ph="SELECT proje... project" />
-            <marker date="1519253495104" expanded="true" signature="1107:1166" ph="DELETE FROM project_employee... " />
-            <marker date="1519253495104" expanded="true" signature="1366:1446" ph="UPDATE project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="708:715" ph="SELECT * FRO... project" />
+            <marker date="1519257272452" expanded="true" signature="708:774" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="708:836" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="1171:1250" ph="DELETE FROM project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1472" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1508" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1529" ph="INSERT INTO project_employee... " />
           </folding>
         </state>
       </provider>
@@ -885,13 +883,13 @@
           <folding>
             <element signature="e#539#540#0" expanded="true" />
             <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
-            <marker date="1519253545778" expanded="true" signature="782:834" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1697:1767" ph="UPDATE department... " />
-            <marker date="1519253545778" expanded="true" signature="2034:2100" ph="INSERT INTO department... " />
-            <marker date="1519253545778" expanded="true" signature="2694:2729" ph="SELECT nextv... " />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2316#2317#0" expanded="true" />
+            <marker date="1519253798470" expanded="true" signature="782:834" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1697:1767" ph="UPDATE department... " />
+            <marker date="1519253798470" expanded="true" signature="2014:2080" ph="INSERT INTO department... " />
+            <marker date="1519253798470" expanded="true" signature="2674:2709" ph="SELECT nextv... " />
           </folding>
         </state>
       </provider>
@@ -1000,10 +998,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/ProjectsCLI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="306" column="0" lean-forward="true" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.2.5.RELEASE/spring-jdbc-4.2.5.RELEASE.jar!/org/springframework/jdbc/support/SQLStateSQLExceptionTranslator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1024,33 +1030,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Project.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="434">
+          <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="67" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <marker date="1519253495104" expanded="true" signature="708:774" ph="SELECT proje... project" />
-            <marker date="1519253495104" expanded="true" signature="1107:1166" ph="DELETE FROM project_employee... " />
-            <marker date="1519253495104" expanded="true" signature="1366:1446" ph="UPDATE project_employee... " />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2316#2317#0" expanded="true" />
+            <marker date="1519253798470" expanded="true" signature="782:834" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
+            <marker date="1519253798470" expanded="true" signature="1697:1767" ph="UPDATE department... " />
+            <marker date="1519253798470" expanded="true" signature="2014:2080" ph="INSERT INTO department... " />
+            <marker date="1519253798470" expanded="true" signature="2674:2709" ph="SELECT nextv... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="58" column="52" lean-forward="true" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
+        <state relative-caret-position="390">
+          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding>
             <element signature="e#480#481#0" expanded="true" />
             <element signature="e#535#536#0" expanded="true" />
@@ -1065,20 +1066,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/ProjectsCLI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="95" column="1" lean-forward="false" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+        <state relative-caret-position="261">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="43" column="58" lean-forward="false" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
           <folding>
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
-            <element signature="e#2336#2337#0" expanded="true" />
-            <marker date="1519253545778" expanded="true" signature="782:834" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1263:1336" ph="SELECT depar... department" />
-            <marker date="1519253545778" expanded="true" signature="1697:1767" ph="UPDATE department... " />
-            <marker date="1519253545778" expanded="true" signature="2034:2100" ph="INSERT INTO department... " />
-            <marker date="1519253545778" expanded="true" signature="2694:2729" ph="SELECT nextv... " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <marker date="1519257272452" expanded="true" signature="708:715" ph="SELECT * FRO... project" />
+            <marker date="1519257272452" expanded="true" signature="708:774" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="708:836" ph="SELECT proje... project" />
+            <marker date="1519257272452" expanded="true" signature="1171:1250" ph="DELETE FROM project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1472" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1508" ph="INSERT INTO project_employee... " />
+            <marker date="1519257272452" expanded="true" signature="1449:1529" ph="INSERT INTO project_employee... " />
           </folding>
         </state>
       </provider>

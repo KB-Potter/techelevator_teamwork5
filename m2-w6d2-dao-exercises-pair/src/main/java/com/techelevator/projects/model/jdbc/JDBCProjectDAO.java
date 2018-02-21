@@ -24,8 +24,10 @@ public class JDBCProjectDAO implements ProjectDAO {
 		ArrayList<Project> projects = new ArrayList<>();
 		Project theProject = null;
 		String sqlgetAllActiveProjects = " SELECT project_id, name, from_date, to_date " +
-				" FROM project";
+				" FROM project " +
+				" WHERE from_date IS NOT NULL AND to_Date IS NOT NULL ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetAllActiveProjects);
+
 		while(results.next()) {
 			theProject = mapRowToProject(results);
 			projects.add(theProject);
@@ -39,7 +41,7 @@ public class JDBCProjectDAO implements ProjectDAO {
 	@Override
 	public void removeEmployeeFromProject(Long projectId, Long employeeId) {
 		String sqlremoveEmployeeFromProject = " DELETE FROM project_employee " +
-				" WHERE project_id = ? ";
+				" WHERE project_id = ? AND employee_id = ?";
 		jdbcTemplate.update(sqlremoveEmployeeFromProject, projectId, employeeId);
 	}
 
