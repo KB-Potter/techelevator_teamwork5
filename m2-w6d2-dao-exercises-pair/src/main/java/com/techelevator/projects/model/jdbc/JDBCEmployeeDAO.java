@@ -99,14 +99,13 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	}
 
 	@Override
-	public void changeEmployeeDepartment(Long employeeId, Long departmentId) {
+	public void changeEmployeeDepartment(Long employeeId, Long departmentId) { //Not Working
 			String sqlUpdateEmployeeDepartment = "UPDATE employee " +
-					" SET department_id " +
-					" WHERE employee_id = ? " +
-					" AND department_id = ? ";
+					" SET department_id = ? " +
+					" WHERE employee_id = ? ";
 
 
-	jdbcTemplate.update(sqlUpdateEmployeeDepartment, employeeId, departmentId);
+	jdbcTemplate.update(sqlUpdateEmployeeDepartment, departmentId, employeeId);
 		System.out.println("Employee: " + employeeId + " moved to department: " + departmentId);
 	}
 
