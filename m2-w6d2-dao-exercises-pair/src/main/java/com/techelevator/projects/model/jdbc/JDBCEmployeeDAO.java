@@ -21,21 +21,18 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 
 	@Override
 	public List<Employee> getAllEmployees() {
-			ArrayList<Employee> employees = new ArrayList<>();
-			Employee theEmployee = null;
-			String sqlgetAllEmployees = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
-					" FROM employee ";
-			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetAllEmployees);
-			while(results.next()) {
-				theEmployee = mapRowToEmployee(results);
-				employees.add(theEmployee);
-			}
-			return employees;
-
+		ArrayList<Employee> employees = new ArrayList<>();
+		Employee theEmployee = null;
+		String sqlgetAllEmployees = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
+				" FROM employee";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetAllEmployees);
+		while(results.next()) {
+			theEmployee = mapRowToEmployee(results);
+			employees.add(theEmployee);
 		}
+		return employees;
 
-
-
+	}
 	@Override
 	public List<Employee> searchEmployeesByName(String firstNameSearch, String lastNameSearch) {
 		ArrayList<Employee> employees = new ArrayList<>();
@@ -56,7 +53,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 		ArrayList<Employee> employees = new ArrayList<>();
 		Employee theEmployee = null;
 		String sqlsearchEmployeesByName = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
-				" FROM employee " + " WHERE first_name = ? " + " AND last_name = ?";
+				" FROM employee " + " WHERE department_id = ? ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlsearchEmployeesByName, id);
 		while(results.next()) {
 			theEmployee = mapRowToEmployee(results);
@@ -100,15 +97,12 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 
 	@Override
 	public void changeEmployeeDepartment(Long employeeId, Long departmentId) { //Not Working
-			String sqlUpdateEmployeeDepartment = "UPDATE employee " +
-					" SET department_id = ? " +
-					" WHERE employee_id = ? ";
+		String sqlChangeEmployeeDepartment = "UPDATE employee " +
+				" SET department_id = ? " +
+				" WHERE department_id IS NOT NULL AND employee_id = ? ";
 
-
-	jdbcTemplate.update(sqlUpdateEmployeeDepartment, departmentId, employeeId);
-		System.out.println("Employee: " + employeeId + " moved to department: " + departmentId);
+		jdbcTemplate.update(sqlChangeEmployeeDepartment, departmentId, employeeId);
 	}
-
 
 	private Employee mapRowToEmployee(SqlRowSet results) {
 		Employee theEmployee;
@@ -121,7 +115,6 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 		theEmployee.setHireDate(results.getDate("hire_date").toLocalDate());
 
 		return theEmployee;
-
 	}
 
 	private long getNextEmployeeId() {
@@ -132,5 +125,4 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 			throw new RuntimeException("Something went wrong getting Id for new Employee");
 		}
 	}
-
 }
