@@ -1,18 +1,20 @@
-package com.techelevator.model.jdbc;
+package com.techelevator.campground.model.jdbc;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-    import java.time.LocalDate;
-        import java.util.ArrayList;
-        import java.util.List;
+import javax.sql.DataSource;
 
-        import javax.sql.DataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-    import com.techelevator.model.ReservationDAO;
-    import org.springframework.jdbc.core.JdbcTemplate;
-        import org.springframework.jdbc.support.rowset.SqlRowSet;
-
+import com.techelevator.model.Reservation;
+import com.techelevator.model.ReservationDAO;
+import com.techelevator.model.Site;
 
 public class JDBCReservationDAO implements ReservationDAO {
+
     private JdbcTemplate jdbcTemplate;
 
     public JDBCReservationDAO(DataSource dataSource) {
@@ -20,51 +22,56 @@ public class JDBCReservationDAO implements ReservationDAO {
     }
 
     @Override
-    public List<Reservation> getAllReservations(long campId, LocalDate fromDate,LocalDate toDate) {
-        List<Reservation> reserveInfo = new ArrayList<>();
-        String reserve = ("SELECT s.site_number,s.max_occupancy,s.accessible,s.max_rv_length,s.utilities,c.daily_fee FROM reservation r "
-                + "JOIN site s ON r.site_id=s.site_id JOIN campground c ON s.campground_id=c.campground_id WHERE c.campground =?"
-                + "AND ? ");
-        SqlRowSet reserveNextRow = jdbcTemplate.queryForRowSet(reserve,campId);
-        while(reserveNextRow.next()){
-            Reservation reservation = mapRowToReservation(reserveNextRow);
-            reserveInfo.add(reservation);
+    public List<Reservation> getReservations(Site site) {
+        List<Reservation> listOfReservations = new ArrayList<>();
+        Long siteId = site.getSiteId();
+        String sqlAvailableReservations = "SELECT * FROM reservation "
+                + "WHERE site_id = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlAvailableReservations, siteId);
+
+        while(results.next()) {
+            Reservation reservation = mapRowToReservation(results);
+            listOfReservations.add(reservation);
         }
-        return reserveInfo;
+
+        return listOfReservations;
     }
-    private Reservation mapRowToReservation(SqlRowSet reserveNextRow){
-        Reservation reservation = new Reservation();
-        reservation.setReservation_id(reserveNextRow.getLong("reservation_id"));
-        reservation.setSite_id(reserveNextRow.getLong("site_id"));
-        reservation.setName(reserveNextRow.getString("name"));
-        reservation.setFrom_date(reserveNextRow.getDate("from_date").toLocalDate());
-        reservation.setTo_date(reserveNextRow.getDate("to_date").toLocalDate());
-        reservation.setCreate_date(reserveNextRow.getDate("create_date").toLocalDate());
+
+    @Override
+    public void bookReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput){
+        String sqlBookReservation = "Insert into reservation (site_id, name, from_date, to_date, create_date) "
+                + "Values (?,?,?,?,NOW())";
+        jdbcTemplate.update(sqlBookReservation, siteChoice.getSiteId(), nameInput, arrivalDate, departureDate);
+
+    }
+    public Reservation getBookedReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput) {
+        String sqlGetReservationId = "Select * FROM reservation WHERE site_id = ? AND name=? AND from_date = ? AND to_date =? ";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetReservationId, siteChoice.getSiteId(), nameInput, arrivalDate, departureDate);
+        if(results.next()){
+            return mapRowToReservation(results);
+
+        }else{
+            return null;
+        }
+    }
+
+
+
+    private Reservation mapRowToReservation(SqlRowSet results) {
+
+        Reservation reservation;
+        reservation = new Reservation();
+
+        reservation.setReservationId(results.getLong("reservation_id"));
+        reservation.setSiteId(results.getLong("site_id"));
+        reservation.setName(results.getString("name"));
+        reservation.setFromDate(results.getDate("from_date").toLocalDate());
+        reservation.setToDate(results.getDate("to_date").toLocalDate());
+        reservation.setCreateDate(results.getDate("create_date").toLocalDate());
 
         return reservation;
     }
 
-    @Override
-    public void  setReservation(long siteId, LocalDate fromDate, LocalDate toDate, String name) {
-        String reserve = ("INSERT INTO reservation (site_id,name,from_date,to_date) VALUES (?,?,?,?)");
-        jdbcTemplate.update(reserve,siteId,name,fromDate,toDate);
 
-    }
-
-    @Override
-    public List<Reservation> getConfirmId(String name,LocalDate fromDate) {
-        List<Reservation> reserveInfo = new ArrayList<>();
-        String reserveId = ("SELECT reservation_id FROM reservation WHERE name =? AND from_date=?");
-        SqlRowSet reserveNextRow = jdbcTemplate.queryForRowSet(reserveId,name,fromDate);
-        while(reserveNextRow.next()){
-            Reservation reservation = mapRowToReservationId(reserveNextRow);
-            reserveInfo.add(reservation);
-        }
-        return reserveInfo;
-    }
-    private Reservation mapRowToReservationId(SqlRowSet reserveNextRow){
-        Reservation reservation = new Reservation();
-        reservation.setReservation_id(reserveNextRow.getLong("reservation_id"));
-        return reservation;
-    }
 }
