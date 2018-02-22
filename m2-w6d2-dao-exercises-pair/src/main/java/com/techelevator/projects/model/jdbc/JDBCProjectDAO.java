@@ -46,9 +46,10 @@ public class JDBCProjectDAO implements ProjectDAO {
 	}
 
 	@Override
-	public void addEmployeeToProject(Long projectId, Long employeeId) { //Does not actually add but works in sql
-		String sqladdEmployeeToProject = "UPDATE project_employee " +  "SET project_id = ? " +
-				" WHERE employee_id = ? ";
+	public void addEmployeeToProject(Long projectId, Long employeeId) { //Does not actually add but works in sql check to make sure employeee int already in project
+		String sqladdEmployeeToProject = "INSERT INTO project_employee (project_id, employee_id) " +
+				" VALUES(?, ?) ";
+//		INSERT INTO project_employee (project_id, employee_id) VALUES(2, 6);
 		jdbcTemplate.update(sqladdEmployeeToProject, projectId, employeeId);
 
 	}
