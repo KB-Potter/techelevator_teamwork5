@@ -40,13 +40,13 @@ public class JDBCReservationDAO implements ReservationDAO {
 
     @Override
     public void bookReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput){
-        String sqlBookReservation = "Insert into reservation (site_id, name, from_date, to_date, create_date) "
-                + "Values (?,?,?,?,NOW())";
+        String sqlBookReservation = "INSERT INTO reservation (site_id, name, from_date, to_date, create_date) "
+                + "VALUES (?,?,?,?,NOW())";
         jdbcTemplate.update(sqlBookReservation, siteChoice.getSiteId(), nameInput, arrivalDate, departureDate);
 
     }
     public Reservation getBookedReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput) {
-        String sqlGetReservationId = "Select * FROM reservation WHERE site_id = ? AND name=? AND from_date = ? AND to_date =? ";
+        String sqlGetReservationId = "SELECT * FROM reservation WHERE site_id = ? AND name=? AND from_date = ? AND to_date =? ";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetReservationId, siteChoice.getSiteId(), nameInput, arrivalDate, departureDate);
         if(results.next()){
             return mapRowToReservation(results);

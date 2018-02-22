@@ -27,14 +27,14 @@ import com.techelevator.model.SiteDAO;
 
 
             String sqlAvailableSites = "SELECT * FROM site WHERE campground_id = ? AND site_id NOT IN (SELECT site.site_id  "
-                    + "FROM reservation "
-                    + "JOIN site ON site.site_id = reservation.site_id "
-                    + "JOIN campground ON campground.campground_id = site.campground_id "
-                    + "WHERE site.campground_id = ? "
-                    + "AND ((?  BETWEEN reservation.from_date AND reservation.to_date)  "
+                    + " FROM reservation "
+                    + " JOIN site ON site.site_id = reservation.site_id "
+                    + " JOIN campground ON campground.campground_id = site.campground_id "
+                    + " WHERE site.campground_id = ? "
+                    + " AND ((?  BETWEEN reservation.from_date AND reservation.to_date)  "
                     + " OR (?  BETWEEN reservation.from_date AND reservation.to_date) "
-                    + "OR (reservation.from_date BETWEEN ? AND ?) "
-                    + "OR (reservation.to_date BETWEEN ? AND ?))) "
+                    + " OR (reservation.from_date BETWEEN ? AND ?) "
+                    + " OR (reservation.to_date BETWEEN ? AND ?))) "
                     + " LIMIT 5; ";
             SqlRowSet results = jdbcTemplate.queryForRowSet(sqlAvailableSites, campground.getCampgroundId(), campground.getCampgroundId(),
                     arrivalDate, departureDate, arrivalDate, departureDate,arrivalDate, departureDate) ;
