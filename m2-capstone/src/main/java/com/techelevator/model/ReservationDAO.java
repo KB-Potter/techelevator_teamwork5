@@ -1,12 +1,16 @@
 package com.techelevator.model;
+import java.time.LocalDate;
+import java.util.List;
+
+
+
 
 import java.util.List;
 
 public interface ReservationDAO {
-	
-	public List<Reservation> getAllReservations(); //need to display names when we do this
-	public List<Reservation> searchReservationsByName(String nameSearch); //don't know if we want this? 
-	public Reservation bookReservation(String reservationName);
-	//basically doing an add name to list here
-	
+
+    public List<Reservation> getAllReservations(long campId, LocalDate fromDate,LocalDate toDate);
+    public void setReservation(long siteId, LocalDate fromDate,LocalDate toDate, String name);
+    public List<Reservation> getConfirmId(String name,LocalDate fromDate);
 }
+
