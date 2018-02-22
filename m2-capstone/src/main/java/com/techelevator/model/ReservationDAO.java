@@ -1,16 +1,13 @@
 package com.techelevator.model;
+
 import java.time.LocalDate;
-import java.util.List;
-
-
-
-
 import java.util.List;
 
 public interface ReservationDAO {
 
-    public List<Reservation> getAllReservations(long campId, LocalDate fromDate,LocalDate toDate);
-    public void setReservation(long siteId, LocalDate fromDate,LocalDate toDate, String name);
-    public List<Reservation> getConfirmId(String name,LocalDate fromDate);
-}
+    public List<Reservation> getReservations(Site site);
+    public void bookReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput);
+    public Reservation getBookedReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput) ;
 
+    
+}
