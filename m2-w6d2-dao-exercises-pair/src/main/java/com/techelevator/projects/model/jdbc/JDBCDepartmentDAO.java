@@ -57,7 +57,7 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 	public void updateDepartmentName(Long departmentId, String departmentName) { //DataIntegrityViolationException
 		String sqlupdateDepartmentName = " UPDATE department " +
 				" SET name = ? " + " WHERE department_id = ? ";
-		jdbcTemplate.queryForRowSet(sqlupdateDepartmentName, departmentName, departmentId);
+		jdbcTemplate.update(sqlupdateDepartmentName, departmentName, departmentId);
 
 	}
 
