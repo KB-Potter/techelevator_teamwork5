@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="campground@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="campground">
+      <ObjectId>17334</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12669</ObjectId>
+    </database>
+    <database id="4" parent="1" name="bdewitt">
+      <ObjectId>16385</ObjectId>
+    </database>
+    <database id="5" parent="1" name="world">
+      <ObjectId>16386</ObjectId>
+    </database>
+    <database id="6" parent="1" name="dvdstore">
+      <ObjectId>16421</ObjectId>
+    </database>
+    <database id="7" parent="1" name="w6d1_database_design_exercises">
+      <ObjectId>16660</ObjectId>
+    </database>
+    <database id="8" parent="1" name="projects">
+      <ObjectId>17284</ObjectId>
+    </database>
+    <role id="9" parent="1" name="bdewitt">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="12" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-02-22.14:44:20.958</IntrospectionTimestamp>
+      <IntrospectionStateNumber>48380</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="13" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="information_schema">
+      <ObjectId>12381</ObjectId>
+    </schema>
+    <sequence id="18" parent="12" name="campground_campground_id_seq">
+      <ObjectId>17346</ObjectId>
+      <StateNumber>47696</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="19" parent="12" name="park_park_id_seq">
+      <ObjectId>17335</ObjectId>
+      <StateNumber>47694</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="20" parent="12" name="reservation_reservation_id_seq">
+      <ObjectId>17366</ObjectId>
+      <StateNumber>47700</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <sequence id="21" parent="12" name="site_site_id_seq">
+      <ObjectId>17354</ObjectId>
+      <StateNumber>47698</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+    </sequence>
+    <table id="22" parent="12" name="campground">
+      <ObjectId>17348</ObjectId>
+      <StateNumber>48379</StateNumber>
+    </table>
+    <table id="23" parent="12" name="park">
+      <ObjectId>17337</ObjectId>
+      <StateNumber>48378</StateNumber>
+    </table>
+    <table id="24" parent="12" name="reservation">
+      <ObjectId>17368</ObjectId>
+      <StateNumber>48380</StateNumber>
+    </table>
+    <table id="25" parent="12" name="site">
+      <ObjectId>17356</ObjectId>
+      <StateNumber>48380</StateNumber>
+    </table>
+    <column id="26" parent="22" name="campground_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47697</StateNumber>
+      <DefaultExpression>nextval(&apos;campground_campground_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="27" parent="22" name="park_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47697</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="28" parent="22" name="name">
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47697</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="29" parent="22" name="open_from_mm">
+      <Position>4</Position>
+      <DataType>varchar(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47697</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="22" name="open_to_mm">
+      <Position>5</Position>
+      <DataType>varchar(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47697</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="31" parent="22" name="daily_fee">
+      <Position>6</Position>
+      <DataType>money|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47697</StateNumber>
+      <TypeId>790</TypeId>
+    </column>
+    <index id="32" parent="22" name="pk_campground_campground_id">
+      <ObjectId>17352</ObjectId>
+      <ColNames>campground_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="33" parent="22" name="pk_campground_campground_id">
+      <ObjectId>17353</ObjectId>
+      <ColNames>campground_id</ColNames>
+      <UnderlyingIndexName>pk_campground_campground_id</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="22" name="campground_park_id_fkey">
+      <ObjectId>17375</ObjectId>
+      <ColNames>park_id</ColNames>
+      <RefTableId>17337</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>park</RefTableName>
+      <RefKeyName>pk_park_park_id</RefKeyName>
+      <RefColNames>park_id</RefColNames>
+    </foreign-key>
+    <column id="35" parent="23" name="park_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47695</StateNumber>
+      <DefaultExpression>nextval(&apos;park_park_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="36" parent="23" name="name">
+      <Position>2</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47695</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="37" parent="23" name="location">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47695</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="38" parent="23" name="establish_date">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47695</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="39" parent="23" name="area">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47695</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="40" parent="23" name="visitors">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47695</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="41" parent="23" name="description">
+      <Position>7</Position>
+      <DataType>varchar(500)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47695</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="42" parent="23" name="pk_park_park_id">
+      <ObjectId>17344</ObjectId>
+      <ColNames>park_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="23" name="pk_park_park_id">
+      <ObjectId>17345</ObjectId>
+      <ColNames>park_id</ColNames>
+      <UnderlyingIndexName>pk_park_park_id</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="24" name="reservation_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47701</StateNumber>
+      <DefaultExpression>nextval(&apos;reservation_reservation_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="45" parent="24" name="site_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47701</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="46" parent="24" name="name">
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47701</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="47" parent="24" name="from_date">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47701</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="48" parent="24" name="to_date">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47701</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="49" parent="24" name="create_date">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47701</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="50" parent="24" name="pk_reservation_reservation_id">
+      <ObjectId>17373</ObjectId>
+      <ColNames>reservation_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="24" name="pk_reservation_reservation_id">
+      <ObjectId>17374</ObjectId>
+      <ColNames>reservation_id</ColNames>
+      <UnderlyingIndexName>pk_reservation_reservation_id</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="24" name="reservation_site_id_fkey">
+      <ObjectId>17385</ObjectId>
+      <ColNames>site_id</ColNames>
+      <RefTableId>17356</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>site</RefTableName>
+      <RefKeyName>pk_site_site_number_campground_id</RefKeyName>
+      <RefColNames>site_id</RefColNames>
+    </foreign-key>
+    <column id="53" parent="25" name="site_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47699</StateNumber>
+      <DefaultExpression>nextval(&apos;site_site_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="54" parent="25" name="campground_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47699</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="55" parent="25" name="site_number">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47699</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="56" parent="25" name="max_occupancy">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47699</StateNumber>
+      <DefaultExpression>6</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="57" parent="25" name="accessible">
+      <Position>5</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47699</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="58" parent="25" name="max_rv_length">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47699</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="59" parent="25" name="utilities">
+      <Position>7</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>47699</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="60" parent="25" name="pk_site_site_number_campground_id">
+      <ObjectId>17364</ObjectId>
+      <ColNames>site_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="25" name="pk_site_site_number_campground_id">
+      <ObjectId>17365</ObjectId>
+      <ColNames>site_id</ColNames>
+      <UnderlyingIndexName>pk_site_site_number_campground_id</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="62" parent="25" name="site_campground_id_fkey">
+      <ObjectId>17380</ObjectId>
+      <ColNames>campground_id</ColNames>
+      <RefTableId>17348</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>campground</RefTableName>
+      <RefKeyName>pk_campground_campground_id</RefKeyName>
+      <RefColNames>campground_id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

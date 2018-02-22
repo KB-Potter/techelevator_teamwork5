@@ -1,44 +1,44 @@
 package com.techelevator.model;
 
 public class Site {
-    private long site_id;
-    private long campground_id;
-    private Integer site_number;
-    private Integer max_occupancy;
+    private long siteId;
+    private long campgroundId;
+    private Integer siteNumber;
+    private Integer maxOccupancy;
     private boolean accessible;
-    private Integer max_rv_length;
+    private Integer maxRVLength;
     private boolean utilities;
 
-    public long getSite_id() {
-        return site_id;
+    public long getSiteId() {
+        return siteId;
     }
 
-    public void setSite_id(long site_id) {
-        this.site_id = site_id;
+    public void setSiteId(long siteId) {
+        this.siteId = siteId;
     }
 
-    public long getCampground_id() {
-        return campground_id;
+    public long getCampgroundId() {
+        return campgroundId;
     }
 
-    public void setCampground_id(long campground_id) {
-        this.campground_id = campground_id;
+    public void setCampgroundId(long campgroundId) {
+        this.campgroundId = campgroundId;
     }
 
-    public long getSite_number() {
-        return site_number;
+    public Integer getSiteNumber() {
+        return siteNumber;
     }
 
-    public void setSite_number(Integer site_number) {
-        this.site_number = site_number;
+    public void setSiteNumber(Integer siteNumber) {
+        this.siteNumber = siteNumber;
     }
 
-    public long getMax_occupancy() {
-        return max_occupancy;
+    public Integer getMaxOccupancy() {
+        return maxOccupancy;
     }
 
-    public void setMax_occupancy(Integer max_occupancy) {
-        this.max_occupancy = max_occupancy;
+    public void setMaxOccupancy(Integer maxOccupancy) {
+        this.maxOccupancy = maxOccupancy;
     }
 
     public boolean isAccessible() {
@@ -49,12 +49,12 @@ public class Site {
         this.accessible = accessible;
     }
 
-    public long getMax_rv_length() {
-        return max_rv_length;
+    public Integer getMaxRVLength() {
+        return maxRVLength;
     }
 
-    public void setMax_rv_length(Integer max_rv_length) {
-        this.max_rv_length = max_rv_length;
+    public void setMaxRVLength(Integer maxRVLength) {
+        this.maxRVLength = maxRVLength;
     }
 
     public boolean isUtilities() {
