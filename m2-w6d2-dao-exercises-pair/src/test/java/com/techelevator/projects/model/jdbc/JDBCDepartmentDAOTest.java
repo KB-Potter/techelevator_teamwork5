@@ -1,10 +1,6 @@
 package com.techelevator.projects.model.jdbc;
 
 
-        import static org.junit.Assert.assertEquals;
-        import static org.junit.Assert.assertNotEquals;
-        import static org.junit.Assert.assertNotNull;
-
         import java.sql.SQLException;
         import java.util.List;
 
@@ -17,6 +13,8 @@ package com.techelevator.projects.model.jdbc;
         import org.junit.Test;
         import org.springframework.jdbc.core.JdbcTemplate;
         import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+
+        import static org.junit.Assert.*;
 
 public class JDBCDepartmentDAOTest {
 
@@ -81,20 +79,37 @@ public class JDBCDepartmentDAOTest {
         assertdepartmentsAreEqual(testDepartment, savedDepartment);
     }
 
+
+    @Test
+    public void return_all_departments() {
+        String TesterDept = "Testing Department2";
+        int beforeAdd = dao.getAllDepartments().size();
+
+        Department testDepartment = dao.createDepartment(TesterDept);
+//
+        assertEquals(beforeAdd + 1, dao.getAllDepartments().size());
+
+
+    }
+
     @Test
     public void returns_departments_by_dept_id() {
-//        Department theDepartment = getDepartment("SQL Station", "South Dakota", TEST_DEPARTMENT, 65535);
+
         String TesterDept = "Testing Department2";
+
         Department testDepartment = dao.createDepartment(TesterDept);
 
-//        Department savedDepartment = dao.getDepartmentById(testDepartment.getId());
-        long daoLong = 0;
-        List<Department> results = dao.getDepartmentById(daoLong);
+        Department savedDepartment = dao.getDepartmentById(testDepartment.getId());
 
-        assertNotNull(results);
-        assertEquals(1, results.size());
-        Department savedDepartment = results.get(0);
         assertdepartmentsAreEqual(testDepartment, savedDepartment);
+//
+//  long daoLong = 0;
+//        System.out.println(savedDepartment = dao.getDepartmentById(daoLong));
+
+//        assertNotNull(results);
+//        assertEquals(1, results.size());
+//        Department savedDepartment = results.get(0);
+//        assertdepartmentsAreEqual(testDepartment, savedDepartment);
     }
 //
 //    @Test
@@ -130,9 +145,32 @@ public class JDBCDepartmentDAOTest {
         return theDepartment;
     }
 
-    private void assertdepartmentsAreEqual(Department expected, Department actual) {
+    private boolean assertdepartmentsAreEqual(Department expected, Department actual) {
         assertEquals(expected.getId(), actual.getId());
         assertEquals(expected.getName(), actual.getName());
 
+
+    }
+
+
+
+    @Test
+    public void searchDepartmentsByName() {
+    }
+
+    @Test
+    public void updateDepartmentName() {
+    }
+
+    @Test
+    public void createDepartment() {
+    }
+
+    @Test
+    public void getDepartmentById() {
+    }
+
+    @Test
+    public void getNextDepartmentId() {
     }
 }
