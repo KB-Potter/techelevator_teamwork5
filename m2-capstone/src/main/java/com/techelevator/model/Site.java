@@ -3,10 +3,10 @@ package com.techelevator.model;
 public class Site {
     private long site_id;
     private long campground_id;
-    private long site_number;
-    private long max_occupancy;
+    private Integer site_number;
+    private Integer max_occupancy;
     private boolean accessible;
-    private long max_rv_length;
+    private Integer max_rv_length;
     private boolean utilities;
 
     public long getSite_id() {
@@ -29,7 +29,7 @@ public class Site {
         return site_number;
     }
 
-    public void setSite_number(long site_number) {
+    public void setSite_number(Integer site_number) {
         this.site_number = site_number;
     }
 
@@ -37,7 +37,7 @@ public class Site {
         return max_occupancy;
     }
 
-    public void setMax_occupancy(long max_occupancy) {
+    public void setMax_occupancy(Integer max_occupancy) {
         this.max_occupancy = max_occupancy;
     }
 
@@ -53,7 +53,7 @@ public class Site {
         return max_rv_length;
     }
 
-    public void setMax_rv_length(long max_rv_length) {
+    public void setMax_rv_length(Integer max_rv_length) {
         this.max_rv_length = max_rv_length;
     }
 
