@@ -149,7 +149,7 @@ public class JDBCDepartmentDAOTest {
         assertEquals(expected.getId(), actual.getId());
         assertEquals(expected.getName(), actual.getName());
 
-
+return true;
     }
 
 
