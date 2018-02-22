@@ -190,3 +190,5 @@ FROM employee
 FULL OUTER JOIN project_employee ON project_employee.employee_id = employee.employee_id  
 FULL OUTER JOIN project ON project.project_id = project_employee.project_id  
 WHERE project.project_id = 2
+
+SELECT * from department
