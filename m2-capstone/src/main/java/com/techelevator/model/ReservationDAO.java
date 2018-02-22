@@ -9,5 +9,5 @@ public interface ReservationDAO {
     public void bookReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput);
     public Reservation getBookedReservation(Site siteChoice, LocalDate arrivalDate, LocalDate departureDate, String nameInput) ;
 
-
+    
 }

@@ -2,6 +2,7 @@ package com.techelevator.model.jdbc;
 
 
 import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,5 +59,4 @@ import com.techelevator.model.SiteDAO;
             site.setUtilities(results.getBoolean("utilities"));
             return site;
         }
-
     }
