@@ -1,4 +1,4 @@
-package com.techelevator.campground.model.jdbc;
+package com.techelevator.model.jdbc;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
