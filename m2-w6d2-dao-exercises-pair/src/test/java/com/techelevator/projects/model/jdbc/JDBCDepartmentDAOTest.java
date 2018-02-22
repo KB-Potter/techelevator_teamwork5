@@ -26,7 +26,6 @@ public class JDBCDepartmentDAOTest {
      * session and hence the same database transaction */
     private static SingleConnectionDataSource dataSource;
     private JDBCDepartmentDAO dao;
-    private long TEST_ID;
    
 
     /* Before any tests are run, this method initializes the datasource for testing. */
@@ -50,13 +49,13 @@ public class JDBCDepartmentDAOTest {
 
     @Before
     public void setup() {
-        String sqlInsertDepartment = "INSERT INTO department (name, department_id) VALUES (?, ?)";
+        String sqlInsertDepartment = "INSERT INTO department (name) VALUES (?)";
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
 
         dao = new JDBCDepartmentDAO(dataSource);
-        long TEST_ID = dao.getNextDepartmentId();
-        jdbcTemplate.update(sqlInsertDepartment, TEST_DEPARTMENT, TEST_ID);
+//        long TEST_ID = dao.getNextDepartmentId();
+        jdbcTemplate.update(sqlInsertDepartment, TEST_DEPARTMENT);
     }
 
     /* After each test, we rollback any changes that were made to the database so that
@@ -67,7 +66,7 @@ public class JDBCDepartmentDAOTest {
     }
 
     @Test
-    public void save_new_Department_and_read_it_back() throws SQLException {
+    public void save_new_Department_and_read_it_back() {
         String TesterDept = "Testing Department2";
 
         Department testDepartment = dao.createDepartment(TesterDept);
@@ -101,7 +100,7 @@ public class JDBCDepartmentDAOTest {
 
         Department savedDepartment = dao.getDepartmentById(testDepartment.getId());
 
-        assertdepartmentsAreEqual(testDepartment, savedDepartment);
+        assertEquals(testDepartment.getId(), savedDepartment.getId());
 //
 //  long daoLong = 0;
 //        System.out.println(savedDepartment = dao.getDepartmentById(daoLong));

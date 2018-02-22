@@ -1,4 +1,4 @@
-package com.techelevator;
+package com.techelevator.projects;
 
 import java.sql.SQLException;
 

@@ -1,4 +1,4 @@
-package com.techelevator;
+package com.techelevator.model;
 
 public class Site {
     private long site_id;
