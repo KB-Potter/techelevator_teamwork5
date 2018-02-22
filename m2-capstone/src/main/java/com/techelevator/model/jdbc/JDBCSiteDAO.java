@@ -58,7 +58,4 @@ import com.techelevator.model.SiteDAO;
             site.setUtilities(results.getBoolean("utilities"));
             return site;
         }
-
     }
-
-}
