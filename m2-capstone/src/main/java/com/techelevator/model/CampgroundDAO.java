@@ -6,3 +6,4 @@ public interface CampgroundDAO {
 
     public List<Campground> getAvailableCampgrounds(Park park);
 }
+

@@ -1,53 +1,63 @@
 package com.techelevator.model;
 
+import java.math.BigDecimal;
+
 public class Campground {
 	
-	private int campground_id; 
-	private int park_id;							//need all of the variables in the tables from the database table
+	private long campgroundId;
+	private long parkId;							//need all of the variables in the tables from the database table
 	private String name; 			//getters and setters for both so we can call them in our menu/calls from table
-	private int open_from_mm; 		//this is the plain object, java object, we put all of the methods in here
-	private int open_to_mm; 			//the dao is where an abstract interface is made so we can refer to objects generically 
-	private double money; 			//the jdbc basically only exists to connect the sql stuff to java
-	
-	public int getCampground_id() {
-		return campground_id;
+	private String openingDate; 		//this is the plain object, java object, we put all of the methods in here
+	private String closingDate; 			//the dao is where an abstract interface is made so we can refer to objects generically
+	private BigDecimal money; 			//the jdbc basically only exists to connect the sql stuff to java
+
+	public long getCampgroundId() {
+		return campgroundId;
 	}
-	public void setCampground_id(int campground_id) {
-		this.campground_id = campground_id;
+
+	public void setCampgroundId(int campgroundId) {
+		this.campgroundId = campgroundId;
 	}
-	public int getPark_id() {
-		return park_id;
+
+	public long getParkId() {
+		return parkId;
 	}
-	
-	public void setPark_id(int park_id) {
-		this.park_id = park_id;
+
+	public void setParkId(int parkId) {
+		this.parkId = parkId;
 	}
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getOpen_from_mm() {
-		return open_from_mm;
+
+	public String getOpeningDate() {
+		return openingDate;
 	}
-	public void setOpen_from_mm(int open_from_mm) {
-		this.open_from_mm = open_from_mm;
+
+	public void setOpeningDate(String openingDate) {
+		this.openingDate = openingDate;
 	}
-	public int getOpen_to_mm() {
-		return open_to_mm;
+
+	public String getClosingDate() {
+		return closingDate;
 	}
-	public void setOpen_to_mm(int open_to_mm) {
-		this.open_to_mm = open_to_mm;
+
+	public void setClosingDate(String closingDate) {
+		this.closingDate = closingDate;
 	}
-	public double getMoney() {
+
+	public BigDecimal getMoney() {
 		return money;
 	}
-	public void setMoney(double money) {
+
+	public void setMoney(BigDecimal money) {
 		this.money = money;
 	}
-	
 }
 
 /* when we first open the application, we want a main menu, with options for seeing the parks, seeing the campgrounds, booking a site, and exits
