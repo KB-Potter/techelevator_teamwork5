@@ -23,7 +23,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public List<Employee> getAllEmployees() {
 		ArrayList<Employee> employees = new ArrayList<>();
 		Employee theEmployee = null;
-		String sqlgetAllEmployees = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
+		String sqlgetAllEmployees = " SELECT department_id, employee_id, first_name, last_name, birth_date, gender, hire_date" +
 				" FROM employee";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetAllEmployees);
 		while(results.next()) {
@@ -37,7 +37,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public List<Employee> searchEmployeesByName(String firstNameSearch, String lastNameSearch) {
 		ArrayList<Employee> employees = new ArrayList<>();
 		Employee theEmployee = null;
-		String sqlsearchEmployeesByName = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
+		String sqlsearchEmployeesByName = " SELECT department_id, employee_id, first_name, last_name, birth_date, gender, hire_date" +
 				" FROM employee " + " WHERE first_name = ? " + " AND last_name = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlsearchEmployeesByName, firstNameSearch, lastNameSearch);
 		while(results.next()) {
@@ -52,7 +52,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public List<Employee> getEmployeesByDepartmentId(long id) {
 		ArrayList<Employee> employees = new ArrayList<>();
 		Employee theEmployee = null;
-		String sqlsearchEmployeesByName = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
+		String sqlsearchEmployeesByName = " SELECT department_id, employee_id, first_name, last_name, birth_date, gender, hire_date" +
 				" FROM employee " + " WHERE department_id = ? ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlsearchEmployeesByName, id);
 		while(results.next()) {
@@ -67,7 +67,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public List<Employee> getEmployeesWithoutProjects() {
 		ArrayList<Employee> employees = new ArrayList<>();
 		Employee theEmployee = null;
-		String sqlgetEmployeesWithoutProjects = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
+		String sqlgetEmployeesWithoutProjects = " SELECT department_id, employee.employee_id, first_name, last_name, birth_date, gender, hire_date" +
 				" FROM employee " + " FULL OUTER JOIN project_employee ON project_employee.employee_id = employee.employee_id " +
 				" FULL OUTER JOIN project ON project.project_id = project_employee.project_id " +
 				" WHERE project.project_id IS NULL ";
@@ -83,7 +83,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	public List<Employee> getEmployeesByProjectId(Long projectId) {
 		ArrayList<Employee> employees = new ArrayList<>();
 		Employee theEmployee = null;
-		String sqlgetEmployeesByProjectId = " SELECT department_id, first_name, last_name, birth_date, gender, hire_date" +
+		String sqlgetEmployeesByProjectId = " SELECT department_id, employee.employee_id, first_name, last_name, birth_date, gender, hire_date" +
 				" FROM employee " + " FULL OUTER JOIN project_employee ON project_employee.employee_id = employee.employee_id " +
 				" FULL OUTER JOIN project ON project.project_id = project_employee.project_id " +
 				" WHERE project.project_id = ? ";
@@ -107,6 +107,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	private Employee mapRowToEmployee(SqlRowSet results) {
 		Employee theEmployee;
 		theEmployee = new Employee();
+		theEmployee.setId(results.getLong("employee_id"));
 		theEmployee.setDepartmentId(results.getLong("department_id"));
 		theEmployee.setFirstName(results.getString("first_name"));
 		theEmployee.setLastName(results.getString("last_name"));
