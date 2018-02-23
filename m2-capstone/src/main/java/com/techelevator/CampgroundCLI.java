@@ -40,7 +40,7 @@ public class CampgroundCLI {
 
 	public static void main(String[] args) {
 		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/campground");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/campground.sql");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("postgres1");
 
@@ -121,14 +121,14 @@ public class CampgroundCLI {
 			if(campgroundChoice == null) {
 				break;
 			}
-			while(arrivalDate == null) {
+			while(arrivalDate == null) { //arrival ok, just departure
 				System.out.println("What is the arrival date (MM/DD/YYYY)? ");
 				arrivalDate = (LocalDate)menu.getDateFromUser();
 			}
-			while(departureDate == null) {
+			while(departureDate == null) { //5 digits breaks
 				System.out.println("What is the departure date(MM/DD/YYYY)? ");
 				departureDate = (LocalDate)menu.getDateFromUser();
-				if(departureDate.isBefore(arrivalDate)) {
+				if(departureDate.isBefore(arrivalDate)) { //Day beyond 31
 					System.out.println(departureDate.toString() + " is before " + arrivalDate + ". Please enter a different date.\n");
 					departureDate = null;
 				}
@@ -152,15 +152,15 @@ public class CampgroundCLI {
 		}
 
 		while(inMenu) {
-			System.out.println("Which site should be reserved (enter 0 to cancel)? ");
+			System.out.println("Which site should be reserved (enter 0 to cancel)? "); //0 isnt breaking
 			siteChoice = menu.getSiteSelectionFromUser(sitesInCampground);
-			if(campgroundChoice == null) {
+			if(campgroundChoice == null || campgroundChoice.equals("0")) {
 				break;
 			}
 			while(reservationName == null) {
 				System.out.println("What name should the reservation be made under? ");
 				reservationName = menu.getReservationName();
-				if(reservationName != null) {
+				if(reservationName != null) { //Null pointer with a 0 and picking site not listed shouldnt work
 					reservationDAO.bookReservation(siteChoice, arrivalDate, departureDate, reservationName);
 					Reservation reservation = reservationDAO.getBookedReservation(siteChoice, arrivalDate, departureDate, reservationName);
 					String reservationId = reservation.getReservationId().toString();
