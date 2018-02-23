@@ -61,13 +61,10 @@ public class JDBCEmployeeDAOTest {
 
     @Test
     public void getAllEmployees() {
-        Employee testEmployee = dao.createEmployee("Frank", "Stallone");
         List<Employee> results = dao.getAllEmployees();
 
         assertNotNull(results);
         assertEquals(12, results.size());
-        Employee savedEmployee = results.get(3);
-        assertEquals(savedEmployee, savedEmployee);
     }
 
     @Test

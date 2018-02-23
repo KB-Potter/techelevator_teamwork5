@@ -1,21 +1,14 @@
 package com.techelevator.projects.model.jdbc;
 
 
-        import java.sql.SQLException;
-        import java.util.ArrayList;
-        import java.util.List;
+import com.techelevator.projects.model.Department;
+import org.junit.*;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
-        import com.techelevator.projects.model.Department;
-        import org.junit.After;
-        import org.junit.AfterClass;
-        import org.junit.Assert;
-        import org.junit.Before;
-        import org.junit.BeforeClass;
-        import org.junit.Test;
-        import org.springframework.jdbc.core.JdbcTemplate;
-        import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+import java.sql.SQLException;
+import java.util.List;
 
-        import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 
 public class JDBCDepartmentDAOTest {
 
@@ -24,7 +17,7 @@ public class JDBCDepartmentDAOTest {
      * session and hence the same database transaction */
     private static SingleConnectionDataSource dataSource;
     private JDBCDepartmentDAO dao;
-   
+
 
     /* Before any tests are run, this method initializes the datasource for testing. */
     @BeforeClass
@@ -47,9 +40,6 @@ public class JDBCDepartmentDAOTest {
 
     @Before
     public void setup() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
-
         dao = new JDBCDepartmentDAO(dataSource);
 
     }
@@ -66,24 +56,16 @@ public class JDBCDepartmentDAOTest {
 
         Department testDepartment = dao.createDepartment("DAO Test Department");
         Department savedDepartment = dao.getDepartmentById(testDepartment.getId());
-
-
         assertNotEquals(null, testDepartment.getId());
         assertEquals(testDepartment, savedDepartment);
     }
 
     @Test
-    public void createDepartment(){
+    public void createDepartment() {
         dao.createDepartment("DAO Test Department");
         System.out.println(dao.getAllDepartments());
     }
 
-    @Test
-    public void return_all_departments() {
-        System.out.println(dao.getAllDepartments());
-
-
-    }
 
     @Test
     public void returns_departments_by_name() {
@@ -100,30 +82,16 @@ public class JDBCDepartmentDAOTest {
     }
 
 
-    private Department getDepartment(String name, long id) {
-        Department theDepartment = new Department();
-        theDepartment.setName(name);
-        theDepartment.setId(id);
-        return theDepartment;
-    }
-
-    private boolean assertdepartmentsAreEqual(Department expected, Department actual) {
-        assertEquals(expected.getId(), actual.getId());
-        assertEquals(expected.getName(), actual.getName());
-
-return true;
-    }
-
-
     @Test
-    public void update_department_name() { //Doesnt work
+    public void update_department_name() {
 
         Department testDepartment = dao.createDepartment("DAO Test Department");
-        List<Department> results = dao.searchDepartmentsByName("DAO Test Department");
-        System.out.println(results);
+        dao.updateDepartmentName(testDepartment.getId(), "DAO Test Department2");
 
-        dao.updateDepartmentName((long) 100, "DAO Test Department2");
-        System.out.println(results);
+        Department savedDepartment = dao.getDepartmentById(testDepartment.getId());
+
+        Assert.assertEquals("DAO Test Department2", savedDepartment.getName());
+
     }
 
 }
