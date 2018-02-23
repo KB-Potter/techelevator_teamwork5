@@ -71,7 +71,7 @@ public class JDBCEmployeeDAOTest {
     public void searchEmployeesByName() {
         Employee testEmployee = dao.createEmployee("Frank", "Stallone");
         List<Employee> results = dao.searchEmployeesByName("Frank", "Stallone");
-        System.out.println(results);
+
         assertNotNull(results);
         assertEquals(1, results.size());
         Employee savedEmployee = results.get(0);
@@ -93,24 +93,42 @@ public class JDBCEmployeeDAOTest {
 
     }
 
+
+
     @Test
-    public void getEmployeesByDepartmentId() {
-        Employee testEmployee = dao.createEmployee("Frank", "Stallone");
-        testEmployee.setDepartmentId((long) 100);
-        List<Employee> results = dao.getEmployeesByDepartmentId(testEmployee.getDepartmentId());
-        System.out.println(results);
+    public void get_employee_by_project_id() {
+        List<Employee> results = dao.getEmployeesByProjectId((long) 3);
+        Employee testEmployee = results.get(0);
+
         assertNotNull(results);
-        assertEquals(1, results.size());
+        assertEquals(4, results.size());
         Employee savedEmployee = results.get(0);
         assertEquals(testEmployee, savedEmployee);
+
     }
+
+//    @Test
+//    public void testing() {
+//        Employee testEmployee = dao.createEmployee("Frank", "Stallone");
+//        testEmployee.setId((long) 100);
+//
+//        Project testProject = projectDAO.createProject("DAO Testing Project");
+//
+//
+//        List<Employee> results = dao.searchEmployeesByName("Frank", "Stallone");
+//        testEmployee.setId((long) 100);
+//
+//        projectDAO.addEmployeeToProject((long) 3, testEmployee.getId());
+//
+//        assertNotNull(results);
+//        assertEquals(1, results.size());
+//        Employee savedEmployee = results.get(0);
+//        assertEquals(testEmployee, savedEmployee);
+//    }
 
     @Test
     public void getEmployeesWithoutProjects() {
-    }
 
-    @Test
-    public void getEmployeesByProjectId() {
     }
 
     @Test

@@ -87,8 +87,8 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 		ArrayList<Employee> employees = new ArrayList<>();
 		Employee theEmployee = null;
 		String sqlgetEmployeesByProjectId = " SELECT department_id, employee.employee_id, first_name, last_name, birth_date, gender, hire_date" +
-				" FROM employee " + " FULL OUTER JOIN project_employee ON project_employee.employee_id = employee.employee_id " +
-				" FULL OUTER JOIN project ON project.project_id = project_employee.project_id " +
+				" FROM employee " + " JOIN project_employee ON project_employee.employee_id = employee.employee_id " +
+				" JOIN project ON project.project_id = project_employee.project_id " +
 				" WHERE project.project_id = ? ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetEmployeesByProjectId, projectId);
 		while(results.next()) {
@@ -114,9 +114,15 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 		theEmployee.setDepartmentId(results.getLong("department_id"));
 		theEmployee.setFirstName(results.getString("first_name"));
 		theEmployee.setLastName(results.getString("last_name"));
+		if (results.getDate("birth_date") != null) {
 		theEmployee.setBirthDay(results.getDate("birth_date").toLocalDate());
-		theEmployee.setGender(results.getString("gender").charAt(0));
-		theEmployee.setHireDate(results.getDate("hire_date").toLocalDate());
+		}
+		if (results.getString("gender") != null) {
+			theEmployee.setGender(results.getString("gender").charAt(0));
+		}
+		if (results.getDate("hire_date") != null) {
+			theEmployee.setHireDate(results.getDate("hire_date").toLocalDate());
+		}
 
 		return theEmployee;
 	}
