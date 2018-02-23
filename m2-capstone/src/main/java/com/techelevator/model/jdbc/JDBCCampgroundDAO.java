@@ -3,16 +3,16 @@ package com.techelevator.model.jdbc;
 import com.techelevator.model.Campground;
 
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
-        import javax.sql.DataSource;
+import javax.sql.DataSource;
 
-        import org.springframework.jdbc.core.JdbcTemplate;
-        import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-        import com.techelevator.model.CampgroundDAO;
-        import com.techelevator.model.Park;
+import com.techelevator.model.CampgroundDAO;
+import com.techelevator.model.Park;
 
 public class JDBCCampgroundDAO implements CampgroundDAO {
 
@@ -48,7 +48,7 @@ public class JDBCCampgroundDAO implements CampgroundDAO {
         campground.setName(results.getString("name"));
         campground.setOpeningDate(results.getString("open_from_mm"));
         campground.setClosingDate(results.getString("open_to_mm"));
-        campground.setMoney(results.getBigDecimal("daily_fee"));
+        campground.setDailyFee(results.getBigDecimal("daily_fee"));
         return campground;
     }
 

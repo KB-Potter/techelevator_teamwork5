@@ -1,5 +1,6 @@
 package com.techelevator.projects.model.jdbc;
 
+import com.techelevator.projects.model.Employee;
 import com.techelevator.projects.model.Project;
 import org.junit.After;
 import org.junit.Before;
@@ -73,7 +74,9 @@ public class JDBCProjectDAOTest {
 
     @Test
     public void add_employee_to_project() {
-//        employeeDAO.
+        Employee testEmployee = employeeDAO.createEmployee("Frank", "Stallone");
+
+
     }
 
     @Test

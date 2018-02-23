@@ -1,27 +1,27 @@
 package com.techelevator.model;
 
 public class Site {
-    private long siteId;
-    private long campgroundId;
+    private Long siteId;
+    private Long campgroundId;
     private Integer siteNumber;
     private Integer maxOccupancy;
     private boolean accessible;
-    private Integer maxRVLength;
+    private Integer maxRvLength;
     private boolean utilities;
 
-    public long getSiteId() {
+    public Long getSiteId() {
         return siteId;
     }
 
-    public void setSiteId(long siteId) {
+    public void setSiteId(Long siteId) {
         this.siteId = siteId;
     }
 
-    public long getCampgroundId() {
+    public Long getCampgroundId() {
         return campgroundId;
     }
 
-    public void setCampgroundId(long campgroundId) {
+    public void setCampgroundId(Long campgroundId) {
         this.campgroundId = campgroundId;
     }
 
@@ -42,26 +42,49 @@ public class Site {
     }
 
     public boolean isAccessible() {
+
         return accessible;
     }
-
+    public String isAccessibleToString(boolean accesible){
+        if(accesible){
+            return "Yes";
+        }else{
+            return "No";
+        }
+    }
     public void setAccessible(boolean accessible) {
         this.accessible = accessible;
     }
 
-    public Integer getMaxRVLength() {
-        return maxRVLength;
+    public Integer getMaxRvLength() {
+        return maxRvLength;
+    }
+    public String maxRVToString(Integer maxRvLength) {
+        if (maxRvLength  == null) {
+            return "N/A";
+        }else{
+            return maxRvLength.toString();
+        }
     }
 
-    public void setMaxRVLength(Integer maxRVLength) {
-        this.maxRVLength = maxRVLength;
+
+    public void setMaxRvLength(Integer maxRvLength) {
+        this.maxRvLength = maxRvLength;
     }
 
     public boolean isUtilities() {
         return utilities;
     }
+    public String isUtilitiesToString(boolean utilities){
+        if(utilities){
+            return "Yes";
+        }else{
+            return "N/A";
+        }
+    }
 
     public void setUtilities(boolean utilities) {
         this.utilities = utilities;
     }
+
 }

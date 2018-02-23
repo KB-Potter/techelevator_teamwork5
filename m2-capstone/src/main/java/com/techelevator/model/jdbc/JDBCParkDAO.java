@@ -1,59 +1,71 @@
 package com.techelevator.model.jdbc;
 
-import com.techelevator.model.Park;
-import org.springframework.jdbc.core.JdbcTemplate;
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
+import com.techelevator.model.Park;
+import com.techelevator.model.ParkDAO;
 
-public class JDBCParkDAO {
+public class JDBCParkDAO implements ParkDAO {
 
     private JdbcTemplate jdbcTemplate;
 
     public JDBCParkDAO(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
-
     }
 
-    public List<Park> getParkInfo(long choice){
-        List<Park> parkInfo = new ArrayList<>();
-        String park = ("SELECT * FROM park WHERE park_id = ? ");
-        jdbcTemplate.update(park, choice);
-        SqlRowSet parkNextRow = jdbcTemplate.queryForRowSet(park);
-        while(parkNextRow.next()) {
-            parkInfo.add(mapRowToPark(parkNextRow));
+    @Override
+    public List<Park> getAllAvailableParks() {
+        List<Park> listOfParks = new ArrayList<>();
+
+        String sqlAvailableParks = "SELECT * FROM park "
+                + "ORDER BY name";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlAvailableParks);
+
+        while(results.next()) {
+            Park newPark = mapRowToPark(results);
+            listOfParks.add(newPark);
         }
-        return parkInfo;
+
+        return listOfParks;
     }
 
-    public List<Park> getAllParks(){
-        List<Park> parkInfo = new ArrayList<>();
-        String parks = "SELECT * FROM park";
-        SqlRowSet parkNextRow = jdbcTemplate.queryForRowSet(parks);
-        while(parkNextRow.next()) {
-            parkInfo.add(mapRowToPark(parkNextRow));
+    @Override
+    public Park getParkInformation(String parkName) {
+        Park selectedPark = new Park();
+
+        String sqlSelectedPark = "SELECT * FROM park "
+                + "WHERE name = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectedPark, parkName);
+
+        while(results.next()) {
+            selectedPark = mapRowToPark(results);
         }
-        return parkInfo;
+
+        return selectedPark;
 
     }
-    private Park mapRowToPark(SqlRowSet parkNextRow) {
-        Park thePark = new Park();
-        thePark.setParkId(parkNextRow.getLong("park_id"));
-        thePark.setParkName(parkNextRow.getString("name"));
-        thePark.setLocation(parkNextRow.getString("location"));
-        thePark.setDateEstablished(parkNextRow.getDate("established_date").toLocalDate());
-        thePark.setArea(parkNextRow.getLong("area"));
-        thePark.setAnnualVisCount(parkNextRow.getLong("annual_visitor_count"));
-        thePark.setDescription(parkNextRow.getString("description"));
 
-        return thePark;
-    }
+    private Park mapRowToPark(SqlRowSet results) {
+        Park park;
+        park = new Park();
+        park.setParkId(results.getLong("park_id"));
+        park.setName(results.getString("name"));
+        park.setLocation(results.getString("location"));
+        park.setEstablishedDate(results.getDate("establish_date").toLocalDate());
+        park.setArea(results.getLong("area"));
+        park.setVisitors(results.getLong("visitors"));
+        park.setDescription(results.getString("description"));
 
-    public List<Park> getAllCampgroundsByParkId(){
-        return null;
+        return park;
 
     }
+
 }
