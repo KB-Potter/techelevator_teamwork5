@@ -241,7 +241,7 @@ public class Menu {
             accessible = site.isAccessibleToString(site.isAccessible());
             maxRVLength = site.maxRVToString(site.getMaxRvLength());
             utility = site.isUtilitiesToString(site.isUtilities());
-            cost = NumberFormat.getCurrencyInstance().format((campground.getDailyFee().multiply(daysBetweenBD))).toString();
+            cost = NumberFormat.getCurrencyInstance().format((campground.getDailyFee().multiply(daysBetweenBD)));
 
             site = siteArray[i];
             siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", siteNumber, occupancy,

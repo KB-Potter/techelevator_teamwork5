@@ -3,7 +3,7 @@ package com.techelevator.model;
 import java.math.BigDecimal;
 
 public class Campground {
-	
+
 	private long campgroundId;
 	private long parkId;							//need all of the variables in the tables from the database table
 	private String name; 			//getters and setters for both so we can call them in our menu/calls from table
@@ -61,11 +61,11 @@ public class Campground {
 }
 
 /* when we first open the application, we want a main menu, with options for seeing the parks, seeing the campgrounds, booking a site, and exits
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */

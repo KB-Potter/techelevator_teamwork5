@@ -59,13 +59,14 @@ public class Site {
     public Integer getMaxRvLength() {
         return maxRvLength;
     }
-    public String maxRVToString(Integer maxRvLength){
-        if(maxRvLength == 0){
+    public String maxRVToString(Integer maxRvLength) {
+        if (maxRvLength  == null) {
             return "N/A";
         }else{
             return maxRvLength.toString();
         }
     }
+
 
     public void setMaxRvLength(Integer maxRvLength) {
         this.maxRvLength = maxRvLength;
