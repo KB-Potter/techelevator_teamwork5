@@ -79,7 +79,30 @@ public class JDBCEmployeeDAOTest {
     }
 
     @Test
+    public void change_employee_department() {
+
+        List<Employee> results = dao.getEmployeesByDepartmentId(1);
+        Employee testEmployee = results.get(0);
+
+        dao.changeEmployeeDepartment(testEmployee.getId(), (long) 2);
+        List<Employee> results2 = dao.getEmployeesByDepartmentId(2);
+
+        Employee savedEmployee = results2.get(results2.size()-1);
+
+       assertEquals(testEmployee, savedEmployee);
+
+    }
+
+    @Test
     public void getEmployeesByDepartmentId() {
+        Employee testEmployee = dao.createEmployee("Frank", "Stallone");
+        testEmployee.setDepartmentId((long) 100);
+        List<Employee> results = dao.getEmployeesByDepartmentId(testEmployee.getDepartmentId());
+        System.out.println(results);
+        assertNotNull(results);
+        assertEquals(1, results.size());
+        Employee savedEmployee = results.get(0);
+        assertEquals(testEmployee, savedEmployee);
     }
 
     @Test
