@@ -84,8 +84,9 @@ public class CampgroundCLI {
 			if(choice.equals(PARKS_INFO_INTERFACE_VIEW_CAMPGROUNDS)) {
 				handleViewCampgrounds(park, databaseCampgroundArray);
 			} else if (choice.equals(PARKS_INFO_INTERFACE_SEARCH_RESERVATION)) {
+				handleSearchForCampgroundReservation(park, databaseCampgroundArray);
 				System.out.println();
-				System.out.println("This function is not yet implemented.");
+
 			} else if (choice.equals(PARKS_INFO_INTERFACE_RETURN)) {
 				break;
 			}
@@ -198,8 +199,16 @@ public class CampgroundCLI {
 	}
 
 	private void displayBanner() {
-		System.out.println("Placeholder");
+		System.out.println("______________________________________________________________________________________________");
+		System.out.println("	     _  _    __   ____ _   __   _   _ __   _       ___    __     ___   _   _          ");
+		System.out.println("	    ||\\||  /__\\   ||  || |  | ||\\||  /__\\  ||     ||__|  /__\\  ||_||  || //          ");
+		System.out.println("	    || \\| ||  ||  ||  || |__| || \\| ||  ||  ||__   ||    ||  ||  || \\  || \\          ");
+		System.out.println(" 	            __    ___  __  _   ___  _   _ _____  _  __   ___   ___  ___                 ");
+		System.out.println(" 	          /__\\  || || || ||  ||__ ||\\ ||  ||  ||  ||  ||_|| ||__ ||__                 ");
+		System.out.println(" 	          ||  ||  ||_// \\//  ||__ || \\||  ||   \\__//  || \\ ||__  ___|                ");
+		System.out.println("______________________________________________________________________________________________");
 	}
+
 
 	private void printHeading(String headingText) {
 		System.out.println("\n"+headingText);
@@ -209,3 +218,6 @@ public class CampgroundCLI {
 		System.out.println();
 	}
 }
+
+
+
