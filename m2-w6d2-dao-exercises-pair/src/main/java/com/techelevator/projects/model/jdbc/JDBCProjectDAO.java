@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import com.techelevator.projects.model.Project;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -39,17 +40,16 @@ public class JDBCProjectDAO implements ProjectDAO {
 
 
 	@Override
-	public void removeEmployeeFromProject(Long projectId, Long employeeId) { //Does not actually remove employee but works in sql
+	public void removeEmployeeFromProject(Long projectId, Long employeeId) {
 		String sqlremoveEmployeeFromProject = " DELETE FROM project_employee " +
 				" WHERE project_id = ? AND employee_id = ?";
 		jdbcTemplate.update(sqlremoveEmployeeFromProject, projectId, employeeId);
 	}
 
 	@Override
-	public void addEmployeeToProject(Long projectId, Long employeeId) { //Does not actually add but works in sql check to make sure employeee int already in project
+	public void addEmployeeToProject(Long projectId, Long employeeId) {
 		String sqladdEmployeeToProject = "INSERT INTO project_employee (project_id, employee_id) " +
 				" VALUES(?, ?) ";
-//		INSERT INTO project_employee (project_id, employee_id) VALUES(2, 6);
 		jdbcTemplate.update(sqladdEmployeeToProject, projectId, employeeId);
 
 	}
@@ -64,5 +64,16 @@ public class JDBCProjectDAO implements ProjectDAO {
 		theProject.setEndDate(results.getDate("to_date").toLocalDate());
 		return theProject;
 
+	}
+
+	@Override
+	public Project createProject(String ProjectName) {
+		Project theProject = new Project();
+		theProject.setName(ProjectName);
+		String sqlcreateProject = " INSERT INTO Project(name, Project_id) " +
+				" VALUES(?, ?) ";
+		theProject.setId(getNextProjectId());
+		jdbcTemplate.update(sqlcreateProject, ProjectName, theProject.getId());
+		return theProject;
 	}
 }

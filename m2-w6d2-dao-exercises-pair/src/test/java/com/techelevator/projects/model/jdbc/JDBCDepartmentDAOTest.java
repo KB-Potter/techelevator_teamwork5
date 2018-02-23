@@ -2,6 +2,7 @@ package com.techelevator.projects.model.jdbc;
 
 
         import java.sql.SQLException;
+        import java.util.ArrayList;
         import java.util.List;
 
         import com.techelevator.projects.model.Department;
@@ -17,9 +18,6 @@ package com.techelevator.projects.model.jdbc;
         import static org.junit.Assert.*;
 
 public class JDBCDepartmentDAOTest {
-
-    private static final String TEST_DEPARTMENT = "Testing Department";
-    
 
     /* Using this particular implementation of DataSource so that
      * every database interaction is part of the same database
@@ -49,13 +47,11 @@ public class JDBCDepartmentDAOTest {
 
     @Before
     public void setup() {
-        String sqlInsertDepartment = "INSERT INTO department (name) VALUES (?)";
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
 
         dao = new JDBCDepartmentDAO(dataSource);
-//        long TEST_ID = dao.getNextDepartmentId();
-        jdbcTemplate.update(sqlInsertDepartment, TEST_DEPARTMENT);
+
     }
 
     /* After each test, we rollback any changes that were made to the database so that
@@ -67,75 +63,42 @@ public class JDBCDepartmentDAOTest {
 
     @Test
     public void save_new_Department_and_read_it_back() {
-        String TesterDept = "Testing Department2";
 
-        Department testDepartment = dao.createDepartment(TesterDept);
-
+        Department testDepartment = dao.createDepartment("DAO Test Department");
         Department savedDepartment = dao.getDepartmentById(testDepartment.getId());
 
 
         assertNotEquals(null, testDepartment.getId());
-        assertdepartmentsAreEqual(testDepartment, savedDepartment);
+        assertEquals(testDepartment, savedDepartment);
     }
 
+    @Test
+    public void createDepartment(){
+        dao.createDepartment("DAO Test Department");
+        System.out.println(dao.getAllDepartments());
+    }
 
     @Test
     public void return_all_departments() {
-        String TesterDept = "Testing Department2";
-        int beforeAdd = dao.getAllDepartments().size();
-
-        Department testDepartment = dao.createDepartment(TesterDept);
-//
-        assertEquals(beforeAdd + 1, dao.getAllDepartments().size());
+        System.out.println(dao.getAllDepartments());
 
 
     }
 
     @Test
-    public void returns_departments_by_dept_id() {
+    public void returns_departments_by_name() {
 
-        String TesterDept = "Testing Department2";
+        Department testDepartment = dao.createDepartment("DAO Test Department");
 
-        Department testDepartment = dao.createDepartment(TesterDept);
+        List<Department> results = dao.searchDepartmentsByName("DAO Test Department");
 
-        Department savedDepartment = dao.getDepartmentById(testDepartment.getId());
+        assertNotNull(results);
+        assertEquals(1, results.size());
+        Department savedDepartment = results.get(0);
+        assertEquals(testDepartment, savedDepartment);
 
-        assertEquals(testDepartment.getId(), savedDepartment.getId());
-//
-//  long daoLong = 0;
-//        System.out.println(savedDepartment = dao.getDepartmentById(daoLong));
-
-//        assertNotNull(results);
-//        assertEquals(1, results.size());
-//        Department savedDepartment = results.get(0);
-//        assertdepartmentsAreEqual(testDepartment, savedDepartment);
     }
-//
-//    @Test
-//    public void returns_multiple_departments_by_country_code() {
-//
-//        dao.save(getDepartment("SQL Station", "South Dakota", TEST_DEPARTMENT, 65535));
-//        dao.save(getDepartment("Postgres Point", "North Dakota", TEST_DEPARTMENT, 65535));
-//
-//        List<Department> results = dao.findDepartmentByCountryCode(TEST_DEPARTMENT);
-//
-//        assertNotNull(results);
-//        assertEquals(2, results.size());
-//    }
-//
-//    @Test
-//    public void returns_departments_by_district() {
-//        String testDistrict = "Tech Elevator";
-//        Department theDepartment = getDepartment("SQL Station", testDistrict, TEST_DEPARTMENT, 65535);
-//        dao.save(theDepartment);
-//
-//        List<Department> results = dao.findDepartmentByDistrict(testDistrict);
-//
-//        assertNotNull(results);
-//        assertEquals(1, results.size());
-//        Department savedDepartment = results.get(0);
-//        assertdepartmentsAreEqual(theDepartment, savedDepartment);
-//    }
+
 
     private Department getDepartment(String name, long id) {
         Department theDepartment = new Department();
@@ -152,24 +115,15 @@ return true;
     }
 
 
-
     @Test
-    public void searchDepartmentsByName() {
+    public void update_department_name() { //Doesnt work
+
+        Department testDepartment = dao.createDepartment("DAO Test Department");
+        List<Department> results = dao.searchDepartmentsByName("DAO Test Department");
+        System.out.println(results);
+
+        dao.updateDepartmentName((long) 100, "DAO Test Department2");
+        System.out.println(results);
     }
 
-    @Test
-    public void updateDepartmentName() {
-    }
-
-    @Test
-    public void createDepartment() {
-    }
-
-    @Test
-    public void getDepartmentById() {
-    }
-
-    @Test
-    public void getNextDepartmentId() {
-    }
 }
