@@ -9,7 +9,7 @@ public class Campground {
 	private String name; 			//getters and setters for both so we can call them in our menu/calls from table
 	private String openingDate; 		//this is the plain object, java object, we put all of the methods in here
 	private String closingDate; 			//the dao is where an abstract interface is made so we can refer to objects generically
-	private BigDecimal money; 			//the jdbc basically only exists to connect the sql stuff to java
+	private BigDecimal dailyFee; 			//the jdbc basically only exists to connect the sql stuff to java
 
 	public long getCampgroundId() {
 		return campgroundId;
@@ -51,12 +51,12 @@ public class Campground {
 		this.closingDate = closingDate;
 	}
 
-	public BigDecimal getMoney() {
-		return money;
+	public BigDecimal getDailyFee() {
+		return dailyFee;
 	}
 
-	public void setMoney(BigDecimal money) {
-		this.money = money;
+	public void setDailyFee(BigDecimal dailyFee) {
+		this.dailyFee = dailyFee;
 	}
 }
 

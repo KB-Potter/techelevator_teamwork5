@@ -4,57 +4,72 @@ import java.time.LocalDate;
 
 public class Park {
 
-    private String park_name;
-    private Long park_id;
+    private Long parkId;
+    private String name;
     private String location;
-    private LocalDate date_established;
+    private LocalDate establishedDate;
     private Long area;
-    private Long annual_visitor_count;
+    private Long visitors;
     private String description;
 
-
-
-
-    public String getParkName() {
-        return park_name;
-    }
-    public void setParkName(String parkName) {
-        this.park_name = parkName;
-    }
     public Long getParkId() {
-        return park_id;
+        return parkId;
     }
+
     public void setParkId(Long parkId) {
-        this.park_id = parkId;
+        this.parkId = parkId;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getLocation() {
         return location;
     }
+
     public void setLocation(String location) {
         this.location = location;
     }
-    public LocalDate getDateEstablished() {
-        return date_established;
+
+    public LocalDate getEstablishedDate() {
+        return establishedDate;
     }
-    public void setDateEstablished(LocalDate dateEstablished) {
-        this.date_established = dateEstablished;
+
+    public void setEstablishedDate(LocalDate establishedDate) {
+        this.establishedDate = establishedDate;
     }
+
     public Long getArea() {
         return area;
     }
+
     public void setArea(Long area) {
         this.area = area;
     }
-    public Long getAnnualVisCount() {
-        return annual_visitor_count;
+
+    public Long getVisitors() {
+        return visitors;
     }
-    public void setAnnualVisCount(Long annualVisCount) {
-        this.annual_visitor_count = annualVisCount;
+
+    public void setVisitors(Long visitors) {
+        this.visitors = visitors;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String toString() {
+        return this.name;
+    }
+
 }
