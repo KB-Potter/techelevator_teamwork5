@@ -1,7 +1,6 @@
-package com.techelevator;
+package com.techelevator; 		//keep this relatively clean, put all menu options and print lines in menu class
 
 import javax.sql.DataSource;
-
 import org.apache.commons.dbcp2.BasicDataSource;
 
 public class CampgroundCLI {
