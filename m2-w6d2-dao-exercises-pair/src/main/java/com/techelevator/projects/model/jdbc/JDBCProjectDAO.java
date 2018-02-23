@@ -1,6 +1,8 @@
 package com.techelevator.projects.model.jdbc;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -66,14 +68,26 @@ public class JDBCProjectDAO implements ProjectDAO {
 
 	}
 
-	@Override
+
 	public Project createProject(String ProjectName) {
 		Project theProject = new Project();
 		theProject.setName(ProjectName);
-		String sqlcreateProject = " INSERT INTO Project(name, Project_id) " +
-				" VALUES(?, ?) ";
+		String sqlcreateProject = " INSERT INTO Project(name, Project_id, from_date, to_date) " +
+				" VALUES(?, ?, ?, ?) ";
+		LocalDate locald = LocalDate.of(1967, 06, 22);
+		Date date = Date.valueOf(locald);
 		theProject.setId(getNextProjectId());
-		jdbcTemplate.update(sqlcreateProject, ProjectName, theProject.getId());
+		jdbcTemplate.update(sqlcreateProject, ProjectName, theProject.getId(), date, date);
 		return theProject;
 	}
+
+	public long getNextProjectId() {
+		SqlRowSet nextIdResult = jdbcTemplate.queryForRowSet("SELECT nextval('seq_project_id')");
+		if (nextIdResult.next()) {
+			return nextIdResult.getLong(1);
+		} else {
+			throw new RuntimeException("Something went wrong getting Id for new Department");
+		}
+	}
+
 }

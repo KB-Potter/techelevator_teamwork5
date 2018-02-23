@@ -63,13 +63,9 @@ public class Employee {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Employee employee = (Employee) o;
-		return gender == employee.gender &&
-				Objects.equals(employeeId, employee.employeeId) &&
-				Objects.equals(departmentId, employee.departmentId) &&
-				Objects.equals(firstName, employee.firstName) &&
-				Objects.equals(lastName, employee.lastName) &&
-				Objects.equals(birthDay, employee.birthDay) &&
-				Objects.equals(hireDate, employee.hireDate);
+		return 	Objects.equals(firstName, employee.firstName) &&
+				Objects.equals(lastName, employee.lastName);
+
 	}
 
 	@Override

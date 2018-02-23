@@ -1,5 +1,7 @@
 package com.techelevator.projects.model.jdbc;
 
+import com.techelevator.projects.model.Employee;
+import com.techelevator.projects.model.Project;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,10 +61,24 @@ public class JDBCEmployeeDAOTest {
 
     @Test
     public void getAllEmployees() {
+        Employee testEmployee = dao.createEmployee("Frank", "Stallone");
+        List<Employee> results = dao.getAllEmployees();
+
+        assertNotNull(results);
+        assertEquals(12, results.size());
+        Employee savedEmployee = results.get(3);
+        assertEquals(savedEmployee, savedEmployee);
     }
 
     @Test
     public void searchEmployeesByName() {
+        Employee testEmployee = dao.createEmployee("Frank", "Stallone");
+        List<Employee> results = dao.searchEmployeesByName("Frank", "Stallone");
+        System.out.println(results);
+        assertNotNull(results);
+        assertEquals(1, results.size());
+        Employee savedEmployee = results.get(0);
+        assertEquals(testEmployee, savedEmployee);
     }
 
     @Test

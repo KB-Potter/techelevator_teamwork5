@@ -1,5 +1,7 @@
 package com.techelevator.projects.model.jdbc;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import com.techelevator.projects.model.Employee;
 import com.techelevator.projects.model.EmployeeDAO;
+
 
 public class JDBCEmployeeDAO implements EmployeeDAO {
 
@@ -126,4 +129,21 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 			throw new RuntimeException("Something went wrong getting Id for new Employee");
 		}
 	}
+	public Employee createEmployee(String firstName, String lastName) {
+		LocalDate locald = LocalDate.of(1967, 06, 22);
+		Date date = Date.valueOf(locald);
+
+		Employee theEmployee = new Employee();
+		theEmployee.setFirstName(firstName);
+		theEmployee.setLastName(lastName);
+		theEmployee.setGender('M');
+		String sqlcreateEmployee = " INSERT INTO Employee(first_name, last_name, birth_date, gender, hire_date) " +
+				" VALUES(?, ?, ?, ?, ?) ";
+		theEmployee.setId(getNextEmployeeId());
+		jdbcTemplate.update(sqlcreateEmployee, firstName, lastName, date, theEmployee.getGender(), date);
+		return theEmployee;
+	}
+
+//VALUES ('Fredrick', 'Keppard', '1953-07-15', 'M', '2001-04-01
+
 }

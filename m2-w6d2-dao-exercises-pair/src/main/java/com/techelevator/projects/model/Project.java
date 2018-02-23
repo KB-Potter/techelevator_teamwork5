@@ -43,9 +43,7 @@ public class Project {
 		if (o == null || getClass() != o.getClass()) return false;
 		Project project = (Project) o;
 		return Objects.equals(id, project.id) &&
-				Objects.equals(name, project.name) &&
-				Objects.equals(startDate, project.startDate) &&
-				Objects.equals(endDate, project.endDate);
+				Objects.equals(name, project.name);
 	}
 
 	@Override

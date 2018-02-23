@@ -1,5 +1,6 @@
 package com.techelevator.projects.model.jdbc;
 
+import com.techelevator.projects.model.Project;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,11 +60,20 @@ public class JDBCProjectDAOTest {
 
     @Test
     public void get_all_active_projects() {
+        Project testProject = dao.createProject("DAO Test Project");
+
+       List<Project> results = dao.getAllActiveProjects();
+
+        assertNotNull(results);
+        assertEquals(4, results.size());
+        Project savedProject = results.get(3);
+        assertEquals(testProject, savedProject);
 
     }
 
     @Test
-    public void searchEmployeesByName() {
+    public void add_employee_to_project() {
+//        employeeDAO.
     }
 
     @Test

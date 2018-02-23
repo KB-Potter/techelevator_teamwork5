@@ -11,7 +11,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/dao_exercises_pair$JDBCProjectDAOTest.coverage" NAME="JDBCProjectDAOTest Coverage Results" MODIFIED="1519355526836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.techelevator.projects.model.jdbc.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/dao_exercises_pair$JDBCDepartmentDAOTest_returns_departments_by_name.coverage" NAME="JDBCDepartmentDAOTest.returns_departments_by_name Coverage Results" MODIFIED="1519348108016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.techelevator.projects.model.jdbc.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/dao_exercises_pair$JDBCEmployeeDAOTest_getAllEmployees.coverage" NAME="JDBCEmployeeDAOTest.getAllEmployees Coverage Results" MODIFIED="1519356007545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.techelevator.projects.model.jdbc.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/dao_exercises_pair$JDBCEmployeeDAOTest.coverage" NAME="JDBCEmployeeDAOTest Coverage Results" MODIFIED="1519357751611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.techelevator.projects.model.jdbc.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/dao_exercises_pair$JDBCDepartmentDAOTest_return_all_departments.coverage" NAME="JDBCDepartmentDAOTest.return_all_departments Coverage Results" MODIFIED="1519320641763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -34,15 +43,34 @@
     <select />
   </component>
   <component name="DockManager">
-    <window id="2">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="JDBCDepartmentDAOTest.java" pinned="false" current-in-tab="true">
+            <file leaf-file-name="JDBCProjectDAO.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="205">
+                    <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#573#574#0" expanded="true" />
+                      <element signature="e#628#629#0" expanded="true" />
+                      <marker date="1519355300109" expanded="true" signature="806:934" ph="SELECT proje... project" />
+                      <marker date="1519355300109" expanded="true" signature="1269:1348" ph="DELETE FROM project_employee... " />
+                      <marker date="1519355300109" expanded="true" signature="1547:1624" ph="INSERT INTO project_employee... " />
+                      <marker date="1519355300109" expanded="true" signature="2231:2317" ph="INSERT INTO Project... " />
+                      <marker date="1519355300109" expanded="true" signature="2647:2679" ph="SELECT nextv... " />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="JDBCDepartmentDAOTest.java" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAOTest.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="171">
-                    <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+                  <state relative-caret-position="256">
+                    <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
                     <folding>
                       <element signature="imports" expanded="true" />
                     </folding>
@@ -60,11 +88,10 @@
       <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="290">
+              <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#706#707#0" expanded="true" />
                 <element signature="e#724#725#0" expanded="true" />
               </folding>
             </state>
@@ -81,11 +108,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DepartmentDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/DepartmentDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="JDBCDepartmentDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
+            <state relative-caret-position="1038">
+              <caret line="66" column="39" lean-forward="false" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#539#540#0" expanded="true" />
@@ -101,39 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JDBCProjectDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#578#579#0" expanded="true" />
-                <marker date="1519352861794" expanded="true" signature="756:884" ph="SELECT proje... project" />
-                <marker date="1519352861794" expanded="true" signature="1219:1298" ph="DELETE FROM project_employee... " />
-                <marker date="1519352861794" expanded="true" signature="1497:1574" ph="INSERT INTO project_employee... " />
-                <marker date="1519352861794" expanded="true" signature="2191:2251" ph="INSERT INTO Project... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepartmentDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/DepartmentDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Department.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Department.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="442">
+              <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
               <folding>
                 <element signature="e#361#362#0" expanded="true" />
                 <element signature="e#384#385#0" expanded="true" />
@@ -142,29 +151,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JDBCEmployeeDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JDBCEmployeeDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="28" />
+            <state relative-caret-position="-23">
+              <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
               <folding>
-                <marker date="1519341998611" expanded="true" signature="708:818" ph="SELECT depar... employee" />
-                <marker date="1519341998611" expanded="true" signature="1248:1409" ph="SELECT depar... employee" />
-                <marker date="1519341998611" expanded="true" signature="1846:1986" ph="SELECT depar... employee" />
-                <marker date="1519341998611" expanded="true" signature="2395:2737" ph="SELECT depar... employee" />
-                <marker date="1519341998611" expanded="true" signature="3153:3491" ph="SELECT depar... employee" />
-                <marker date="1519341998611" expanded="true" signature="3855:3964" ph="UPDATE employee... " />
-                <marker date="1519341998611" expanded="true" signature="4726:4759" ph="SELECT nextv... " />
+                <element signature="imports" expanded="true" />
+                <element signature="e#531#532#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <marker date="1519357572622" expanded="true" signature="759:869" ph="SELECT depar... employee" />
+                <marker date="1519357572622" expanded="true" signature="1299:1460" ph="SELECT depar... employee" />
+                <marker date="1519357572622" expanded="true" signature="1897:2037" ph="SELECT depar... employee" />
+                <marker date="1519357572622" expanded="true" signature="2446:2788" ph="SELECT depar... employee" />
+                <marker date="1519357572622" expanded="true" signature="3204:3542" ph="SELECT depar... employee" />
+                <marker date="1519357572622" expanded="true" signature="3906:4015" ph="UPDATE employee... " />
+                <marker date="1519357572622" expanded="true" signature="4777:4810" ph="SELECT nextv... " />
+                <marker date="1519357572622" expanded="true" signature="5310:5416" ph="INSERT INTO Employee... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JDBCEmployeeDAOTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAOTest.java">
+      <file leaf-file-name="EmployeeDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/EmployeeDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="46" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="1" />
+            <state relative-caret-position="68">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Employee.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,8 +198,8 @@
       <file leaf-file-name="JDBCProjectDAOTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCProjectDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+            <state relative-caret-position="426">
+              <caret line="75" column="10" lean-forward="true" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -184,11 +207,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Employee.java">
+      <file leaf-file-name="JDBCEmployeeDAOTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="68" column="64" lean-forward="true" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
+            <state relative-caret-position="1309">
+              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -218,6 +241,7 @@
       <replace>Department</replace>
       <replace>sqlInsertDepartment</replace>
       <replace>Project</replace>
+      <replace>Employee</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -234,15 +258,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/DepartmentDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Department.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAOTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAOTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Employee.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCProjectDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Project.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCProjectDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Employee.java" />
       </list>
     </option>
   </component>
@@ -265,12 +289,19 @@
           <State>
             <id />
           </State>
-        </expanded-state>
-        <selected-state>
           <State>
-            <id>Android</id>
+            <id>Properties Files</id>
           </State>
-        </selected-state>
+          <State>
+            <id>RegExp</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Thymeleaf</id>
+          </State>
+        </expanded-state>
       </profile-state>
     </entry>
   </component>
@@ -409,7 +440,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
@@ -435,7 +466,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JDBCDepartmentDAOTest.update_department_name">
+  <component name="RunManager" selected="JUnit.JDBCEmployeeDAOTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -456,7 +487,7 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="JDBCDepartmentDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JDBCEmployeeDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.techelevator.projects.model.jdbc.*" />
@@ -467,7 +498,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.techelevator.projects.model.jdbc" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCDepartmentDAOTest" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCEmployeeDAOTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -481,7 +512,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="JDBCDepartmentDAOTest.return_all_departments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JDBCEmployeeDAOTest.getAllEmployees" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.techelevator.projects.model.jdbc.*" />
@@ -492,8 +523,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.techelevator.projects.model.jdbc" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCDepartmentDAOTest" />
-      <option name="METHOD_NAME" value="return_all_departments" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCEmployeeDAOTest" />
+      <option name="METHOD_NAME" value="getAllEmployees" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -506,7 +537,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="JDBCDepartmentDAOTest.returns_departments_by_name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JDBCEmployeeDAOTest.searchEmployeesByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.techelevator.projects.model.jdbc.*" />
@@ -517,8 +548,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.techelevator.projects.model.jdbc" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCDepartmentDAOTest" />
-      <option name="METHOD_NAME" value="returns_departments_by_name" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCEmployeeDAOTest" />
+      <option name="METHOD_NAME" value="searchEmployeesByName" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -531,7 +562,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="JDBCDepartmentDAOTest.save_new_Department_and_read_it_back" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JDBCProjectDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.techelevator.projects.model.jdbc.*" />
@@ -542,9 +573,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.techelevator.projects.model.jdbc" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCDepartmentDAOTest" />
-      <option name="METHOD_NAME" value="save_new_Department_and_read_it_back" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCProjectDAOTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -556,7 +587,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="JDBCDepartmentDAOTest.update_department_name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JDBCProjectDAOTest.get_all_active_projects" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.techelevator.projects.model.jdbc.*" />
@@ -567,8 +598,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.techelevator.projects.model.jdbc" />
-      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCDepartmentDAOTest" />
-      <option name="METHOD_NAME" value="update_department_name" />
+      <option name="MAIN_CLASS_NAME" value="com.techelevator.projects.model.jdbc.JDBCProjectDAOTest" />
+      <option name="METHOD_NAME" value="get_all_active_projects" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -642,19 +673,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.save_new_Department_and_read_it_back" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.return_all_departments" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.returns_departments_by_name" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.update_department_name" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.JDBCProjectDAOTest.get_all_active_projects" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.JDBCProjectDAOTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCEmployeeDAOTest.getAllEmployees" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCEmployeeDAOTest.searchEmployeesByName" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.JDBCEmployeeDAOTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.update_department_name" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.returns_departments_by_name" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.return_all_departments" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.JDBCDepartmentDAOTest.save_new_Department_and_read_it_back" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.JDBCEmployeeDAOTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.JDBCEmployeeDAOTest.searchEmployeesByName" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCEmployeeDAOTest.getAllEmployees" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCProjectDAOTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.JDBCProjectDAOTest.get_all_active_projects" />
       </list>
     </recent_temporary>
   </component>
@@ -682,44 +713,44 @@
       <workItem from="1519316606980" duration="6851000" />
       <workItem from="1519324965490" duration="6995000" />
       <workItem from="1519342831387" duration="23000" />
-      <workItem from="1519342956088" duration="10212000" />
+      <workItem from="1519342956088" duration="14867000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 21m 11s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest - 2018.02.22 at 22h 49m 12s.xml">
+      <configuration name="JDBCEmployeeDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 23m 31s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_getAllEmployees - 2018.02.22 at 22h 19m 49s.xml">
+      <configuration name="JDBCEmployeeDAOTest.getAllEmployees" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 31m 07s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_getAllEmployees - 2018.02.22 at 22h 20m 03s.xml">
+      <configuration name="JDBCEmployeeDAOTest.getAllEmployees" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 31m 23s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_getAllEmployees - 2018.02.22 at 22h 20m 08s.xml">
+      <configuration name="JDBCEmployeeDAOTest.getAllEmployees" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 31m 39s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_getAllEmployees - 2018.02.22 at 22h 42m 39s.xml">
+      <configuration name="JDBCEmployeeDAOTest.getAllEmployees" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 31m 40s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_searchEmployeesByName - 2018.02.22 at 22h 44m 58s.xml">
+      <configuration name="JDBCEmployeeDAOTest.searchEmployeesByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 31m 49s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_searchEmployeesByName - 2018.02.22 at 22h 46m 14s.xml">
+      <configuration name="JDBCEmployeeDAOTest.searchEmployeesByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 31m 57s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_searchEmployeesByName - 2018.02.22 at 22h 46m 53s.xml">
+      <configuration name="JDBCEmployeeDAOTest.searchEmployeesByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 44m 51s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_searchEmployeesByName - 2018.02.22 at 22h 48m 16s.xml">
+      <configuration name="JDBCEmployeeDAOTest.searchEmployeesByName" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCDepartmentDAOTest_update_department_name - 2018.02.22 at 20h 45m 55s.xml">
-      <configuration name="JDBCDepartmentDAOTest.update_department_name" configurationId="JUnit" />
+    <history-entry file="JDBCEmployeeDAOTest_searchEmployeesByName - 2018.02.22 at 22h 48m 58s.xml">
+      <configuration name="JDBCEmployeeDAOTest.searchEmployeesByName" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72755000" />
+    <option name="totallyTimeSpent" value="77410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -732,7 +763,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.49541286" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -746,7 +777,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19088016" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.040104166" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5045872" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -773,21 +804,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/EmployeeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -797,13 +821,17 @@
         <state relative-caret-position="495">
           <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
           <folding>
-            <marker date="1519341998611" expanded="true" signature="708:818" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1248:1409" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1846:1986" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="2395:2737" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3153:3491" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3855:3964" ph="UPDATE employee... " />
-            <marker date="1519341998611" expanded="true" signature="4726:4759" ph="SELECT nextv... " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <marker date="1519357572622" expanded="true" signature="759:869" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1299:1460" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1897:2037" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="2446:2788" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3204:3542" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3906:4015" ph="UPDATE employee... " />
+            <marker date="1519357572622" expanded="true" signature="4777:4810" ph="SELECT nextv... " />
+            <marker date="1519357572622" expanded="true" signature="5310:5416" ph="INSERT INTO Employee... " />
           </folding>
         </state>
       </provider>
@@ -881,8 +909,8 @@
           <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -927,13 +955,17 @@
         <state relative-caret-position="255">
           <caret line="28" column="35" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding>
-            <marker date="1519341998611" expanded="true" signature="708:818" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1248:1409" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1846:1986" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="2395:2737" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3153:3491" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3855:3964" ph="UPDATE employee... " />
-            <marker date="1519341998611" expanded="true" signature="4726:4759" ph="SELECT nextv... " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <marker date="1519357572622" expanded="true" signature="759:869" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1299:1460" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1897:2037" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="2446:2788" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3204:3542" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3906:4015" ph="UPDATE employee... " />
+            <marker date="1519357572622" expanded="true" signature="4777:4810" ph="SELECT nextv... " />
+            <marker date="1519357572622" expanded="true" signature="5310:5416" ph="INSERT INTO Employee... " />
           </folding>
         </state>
       </provider>
@@ -944,8 +976,8 @@
           <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -997,13 +1029,17 @@
         <state relative-caret-position="255">
           <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding>
-            <marker date="1519341998611" expanded="true" signature="708:818" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1248:1409" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1846:1986" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="2395:2737" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3153:3491" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3855:3964" ph="UPDATE employee... " />
-            <marker date="1519341998611" expanded="true" signature="4726:4759" ph="SELECT nextv... " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <marker date="1519357572622" expanded="true" signature="759:869" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1299:1460" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1897:2037" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="2446:2788" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3204:3542" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3906:4015" ph="UPDATE employee... " />
+            <marker date="1519357572622" expanded="true" signature="4777:4810" ph="SELECT nextv... " />
+            <marker date="1519357572622" expanded="true" signature="5310:5416" ph="INSERT INTO Employee... " />
           </folding>
         </state>
       </provider>
@@ -1047,13 +1083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/EmployeeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1126,14 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/DepartmentDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1144,50 +1165,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Department.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6f40da34-ae02-4f39-883f-e80c1375fc7a/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/DepartmentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <marker date="1519341998611" expanded="true" signature="708:818" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1248:1409" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="1846:1986" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="2395:2737" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3153:3491" ph="SELECT depar... employee" />
-            <marker date="1519341998611" expanded="true" signature="3855:3964" ph="UPDATE employee... " />
-            <marker date="1519341998611" expanded="true" signature="4726:4759" ph="SELECT nextv... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="46" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="82" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="68" column="64" lean-forward="true" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,30 +1189,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAOTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state relative-caret-position="290">
+          <caret line="35" column="30" lean-forward="true" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCProjectDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+        <state relative-caret-position="426">
+          <caret line="75" column="10" lean-forward="true" selection-start-line="75" selection-start-column="10" selection-end-line="75" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Department.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+          <folding>
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/EmployeeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <marker date="1519355300109" expanded="true" signature="806:934" ph="SELECT proje... project" />
+            <marker date="1519355300109" expanded="true" signature="1269:1348" ph="DELETE FROM project_employee... " />
+            <marker date="1519355300109" expanded="true" signature="1547:1624" ph="INSERT INTO project_employee... " />
+            <marker date="1519355300109" expanded="true" signature="2231:2317" ph="INSERT INTO Project... " />
+            <marker date="1519355300109" expanded="true" signature="2647:2679" ph="SELECT nextv... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCDepartmentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
+        <state relative-caret-position="1038">
+          <caret line="66" column="39" lean-forward="false" selection-start-line="66" selection-start-column="39" selection-end-line="66" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#539#540#0" expanded="true" />
@@ -1237,30 +1294,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/Project.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCEmployeeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state relative-caret-position="-23">
+          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techelevator/projects/model/jdbc/JDBCProjectDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-            <marker date="1519352861794" expanded="true" signature="756:884" ph="SELECT proje... project" />
-            <marker date="1519352861794" expanded="true" signature="1219:1298" ph="DELETE FROM project_employee... " />
-            <marker date="1519352861794" expanded="true" signature="1497:1574" ph="INSERT INTO project_employee... " />
-            <marker date="1519352861794" expanded="true" signature="2191:2251" ph="INSERT INTO Project... " />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <marker date="1519357572622" expanded="true" signature="759:869" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1299:1460" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="1897:2037" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="2446:2788" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3204:3542" ph="SELECT depar... employee" />
+            <marker date="1519357572622" expanded="true" signature="3906:4015" ph="UPDATE employee... " />
+            <marker date="1519357572622" expanded="true" signature="4777:4810" ph="SELECT nextv... " />
+            <marker date="1519357572622" expanded="true" signature="5310:5416" ph="INSERT INTO Employee... " />
           </folding>
         </state>
       </provider>
