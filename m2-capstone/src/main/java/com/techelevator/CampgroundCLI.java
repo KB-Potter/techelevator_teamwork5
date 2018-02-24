@@ -164,7 +164,7 @@ public class CampgroundCLI {
 			while(reservationName == null) {
 				System.out.println("What name should the reservation be made under? ");
 				reservationName = menu.getReservationName();
-				if(reservationName != null) { //Null pointer with a 0 and picking site not listed shouldnt work
+				if(reservationName != null) {
 					reservationDAO.bookReservation(siteChoice, arrivalDate, departureDate, reservationName);
 					Reservation reservation = reservationDAO.getBookedReservation(siteChoice, arrivalDate, departureDate, reservationName);
 					String reservationId = reservation.getReservationId().toString();
