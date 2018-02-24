@@ -4,7 +4,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -16,10 +19,11 @@ import com.techelevator.model.Park;
 import com.techelevator.model.Site;
 
 public class Menu {
+    final static String DATE_FORMAT = "dd-MM-yyyy";
 
     private PrintWriter out;
     private Scanner in;
-    private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/LLLL/yyyy");
+    private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
     public Menu(InputStream input, OutputStream output) {
         this.out = new PrintWriter(output);
@@ -108,7 +112,7 @@ public class Menu {
                 return null;
             }
             for(Site site : siteArray) {
-                if(selectedNumber == site.getSiteNumber().intValue()) {
+                if(selectedNumber == site.getSiteNumber()) {
                     siteChoice = site;
                 }
             }
@@ -131,7 +135,7 @@ public class Menu {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDate date = null;
         try {
-            date =  LocalDate.parse(userInput, formatter);
+            date = LocalDate.parse(userInput, formatter);
         } catch (Exception e) {
             System.out.println("\n***Please enter a valid date***\n");
             return null;
@@ -163,9 +167,9 @@ public class Menu {
 
     public void displayParkInfo(Park selectedPark) {
         String location = selectedPark.getLocation();
-        String established = selectedPark.getEstablishedDate().format(dateFormatter).toString();
-        String area = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getArea()).toString();
-        String visitors = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getVisitors()).toString();
+        String established = selectedPark.getEstablishedDate().format(dateFormatter);
+        String area = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getArea());
+        String visitors = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getVisitors());
 
         StringBuilder info = new StringBuilder();
         info.append(String.format("%-18s %s", "Location: ", location  + "\n"));
@@ -176,6 +180,7 @@ public class Menu {
         System.out.println();
         System.out.println(info);
 
+//        System.out.println(selectedPark.getDescription());
 
         StringBuilder description = new StringBuilder(selectedPark.getDescription());
         int i = 0;
@@ -232,10 +237,10 @@ public class Menu {
         Long daysBetween = ChronoUnit.DAYS.between(arrivalDate, departureDate);
         BigDecimal daysBetweenBD = new BigDecimal(daysBetween);
 
-        siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", "Site No.", "Max Occup.", "Accesible?", "Max RV Length", "Utility" ,"Cost" +"\n"));
+        siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", "Site No.", "Max Occup.", "Accessible?", "Max RV Length", "Utility" ,"Cost" +"\n"));
 
-        for(int i = 0; i < siteArray.length; i++) {
-            Site site = siteArray[i];
+        for (Site aSiteArray : siteArray) {
+            Site site = aSiteArray;
             siteNumber = site.getSiteNumber().toString();
             occupancy = site.getMaxOccupancy().toString();
             accessible = site.isAccessibleToString(site.isAccessible());
@@ -243,10 +248,9 @@ public class Menu {
             utility = site.isUtilitiesToString(site.isUtilities());
             cost = NumberFormat.getCurrencyInstance().format((campground.getDailyFee().multiply(daysBetweenBD)));
 
-            site = siteArray[i];
             siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", siteNumber, occupancy,
                     accessible, maxRVLength,
-                    utility, cost +  "\n"));
+                    utility, cost + "\n"));
         }
         System.out.println(siteString);
     }
