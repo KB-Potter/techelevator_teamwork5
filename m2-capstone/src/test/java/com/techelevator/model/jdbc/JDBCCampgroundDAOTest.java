@@ -1,5 +1,7 @@
 package com.techelevator.model.jdbc;
 
+import com.techelevator.model.jdbc.JDBCCampgroundDAO;
+import com.techelevator.model.jdbc.JDBCParkDAO;
 import org.junit.*;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import com.techelevator.model.Park;
@@ -19,7 +21,7 @@ public class JDBCCampgroundDAOTest {
         dataSource = new SingleConnectionDataSource();
         dataSource.setUrl("jdbc:postgresql://localhost:5432/campground");
         dataSource.setUsername("postgres");
-
+        dataSource.setPassword("postgres1");
         dataSource.setAutoCommit(false);
     }
 

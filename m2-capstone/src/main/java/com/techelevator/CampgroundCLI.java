@@ -1,24 +1,15 @@
 package com.techelevator;
 
-import java.time.LocalDate;
-
-import javax.sql.DataSource;
-
-import org.apache.commons.dbcp2.BasicDataSource;
-
-import com.techelevator.model.Campground;
-import com.techelevator.model.CampgroundDAO;
-import com.techelevator.model.Park;
-import com.techelevator.model.ParkDAO;
-import com.techelevator.model.Reservation;
-import com.techelevator.model.ReservationDAO;
-import com.techelevator.model.Site;
-import com.techelevator.model.SiteDAO;
+import com.techelevator.model.*;
 import com.techelevator.model.jdbc.JDBCCampgroundDAO;
 import com.techelevator.model.jdbc.JDBCParkDAO;
 import com.techelevator.model.jdbc.JDBCReservationDAO;
 import com.techelevator.model.jdbc.JDBCSiteDAO;
 import com.techelevator.view.Menu;
+import org.apache.commons.dbcp2.BasicDataSource;
+
+import javax.sql.DataSource;
+import java.time.LocalDate;
 
 public class CampgroundCLI {
 
@@ -31,11 +22,12 @@ public class CampgroundCLI {
 	private static final String PARK_CAMPGROUNDS_RETURN = "Return to Previous Screen";
 	private static final String[] PARK_CAMPGROUNDS = new String[] { PARK_CAMPGROUNDS_SEARCH_RESERVATIONS, PARK_CAMPGROUNDS_RETURN };
 
-	private Menu menu;
-	private ParkDAO parkDAO;
-	private CampgroundDAO campgroundDAO;
-	private SiteDAO siteDAO;
-	private ReservationDAO reservationDAO;
+	private final Menu menu;
+	private final ParkDAO parkDAO;
+	private final CampgroundDAO campgroundDAO;
+	private final SiteDAO siteDAO;
+	private final ReservationDAO reservationDAO;
+
 
 
 	public static void main(String[] args) {
@@ -48,8 +40,7 @@ public class CampgroundCLI {
 		application.run();
 	}
 
-	public CampgroundCLI(DataSource datasource) {
-		test:
+	private CampgroundCLI(DataSource datasource) {
 		menu = new Menu(System.in, System.out);
 
 		parkDAO = new JDBCParkDAO(datasource);
@@ -58,7 +49,7 @@ public class CampgroundCLI {
 		reservationDAO = new JDBCReservationDAO(datasource);
 	}
 
-	public void run() {
+	private void run() {
 
 		displayBanner();
 
@@ -78,18 +69,22 @@ public class CampgroundCLI {
 
 		Campground[] databaseCampgroundArray = campgroundOptionArrayCreation(park);
 
-		while(true) {
+		label:
+		while (true) {
 
 			printHeading("Select a Command");
-			String choice = (String)menu.getChoiceFromOptions(PARKS_INFO_INTERFACE);
-			if(choice.equals(PARKS_INFO_INTERFACE_VIEW_CAMPGROUNDS)) {
-				handleViewCampgrounds(park, databaseCampgroundArray);
-			} else if (choice.equals(PARKS_INFO_INTERFACE_SEARCH_RESERVATION)) {
-				handleSearchForCampgroundReservation(park, databaseCampgroundArray);
-				System.out.println();
+			String choice = (String) menu.getChoiceFromOptions(PARKS_INFO_INTERFACE);
+			switch (choice) {
+				case PARKS_INFO_INTERFACE_VIEW_CAMPGROUNDS:
+					handleViewCampgrounds(park, databaseCampgroundArray);
+					break;
+				case PARKS_INFO_INTERFACE_SEARCH_RESERVATION:
+					handleSearchForCampgroundReservation(park, databaseCampgroundArray);
+					System.out.println();
 
-			} else if (choice.equals(PARKS_INFO_INTERFACE_RETURN)) {
-				break;
+					break;
+				case PARKS_INFO_INTERFACE_RETURN:
+					break label;
 			}
 		}
 	}
@@ -109,42 +104,41 @@ public class CampgroundCLI {
 	}
 
 	private void handleSearchForCampgroundReservation(Park park, Campground[] databaseCampgroundArray) {
-
-//		menu.displayCampgrounds(park, databaseCampgroundArray);
-		Campground campgroundChoice = new Campground();
+		Campground campgroundChoice;
 		LocalDate arrivalDate = null;
 		LocalDate departureDate = null;
 
-		while(true) {
+		while (true) {
 			menu.displayCampgrounds(park, databaseCampgroundArray);
 			System.out.println("Which campground (enter 0 to cancel)? ");
 			campgroundChoice = menu.getCampgroundSelectionFromUser(databaseCampgroundArray);
-			if(campgroundChoice == null) {
+			if (campgroundChoice == null) {
 				break;
 			}
-			while(arrivalDate == null) { //arrival ok, just departure
+			while (arrivalDate == null) { //arrival ok, just departure
 				System.out.println("What is the arrival date (MM/DD/YYYY)? ");
-				arrivalDate = (LocalDate)menu.getDateFromUser();
+
+				arrivalDate = menu.getDateFromUser();
+
 			}
-			while(departureDate == null) { //5 digits breaks
+			while (departureDate == null || departureDate.isBefore(arrivalDate)) { //5 digits breaks
 				System.out.println("What is the departure date(MM/DD/YYYY)? ");
-				departureDate = (LocalDate)menu.getDateFromUser();
-				if(departureDate.isBefore(arrivalDate)) { //Day beyond 31
-					System.out.println(departureDate.toString() + " is before " + arrivalDate + ". Please enter a different date.\n");
-					departureDate = null;
-				}
+				departureDate = menu.getDateFromUser();
 			}
+
+
+
 			handleMakingReservation(campgroundChoice, arrivalDate, departureDate);
 		}
-
 	}
+
 
 	private void handleMakingReservation(Campground campgroundChoice, LocalDate arrivalDate, LocalDate departureDate ) {
 
 		boolean inMenu = true;
 		Site[] sitesInCampground = siteOptionArrayCreation(campgroundChoice, arrivalDate, departureDate);
 		menu.displaySites(sitesInCampground, campgroundChoice, arrivalDate, departureDate);
-		Site siteChoice = new Site();
+		Site siteChoice;
 		String reservationName = null;
 
 		if(sitesInCampground.length == 0) {
@@ -153,9 +147,10 @@ public class CampgroundCLI {
 		}
 
 		while(inMenu) {
-			System.out.println("Which site should be reserved (enter 0 to cancel)? ");
+			System.out.println("Which site should be reserved (enter 0 to cancel)? "); //if site isnt available needs check
 			siteChoice = menu.getSiteSelectionFromUser(sitesInCampground);
 			if (siteChoice == null){
+				System.out.println("Invalid Site Selection");
 				return;
 			}
 			if(campgroundChoice == null) {
@@ -221,6 +216,7 @@ public class CampgroundCLI {
 		}
 		System.out.println();
 	}
+
 }
 
 

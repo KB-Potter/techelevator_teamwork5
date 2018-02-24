@@ -1,5 +1,7 @@
 package com.techelevator.model.jdbc;
 
+import com.techelevator.model.jdbc.JDBCParkDAO;
+import com.techelevator.projects.DAOIntegrationTest;
 import org.junit.*;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
@@ -7,7 +9,7 @@ import java.time.LocalDate;
 
 import static org.junit.Assert.*;
 
-public class JDBCParkDAOTest {
+public class JDBCParkDAOTest extends DAOIntegrationTest {
 
     private static SingleConnectionDataSource dataSource;
     private JDBCParkDAO dao;
