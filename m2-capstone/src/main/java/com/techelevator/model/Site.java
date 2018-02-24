@@ -45,8 +45,8 @@ public class Site {
 
         return accessible;
     }
-    public String isAccessibleToString(boolean accesible){
-        if(accesible){
+    public String isAccessibleToString(boolean accessible){
+        if(accessible){
             return "Yes";
         }else{
             return "No";
@@ -60,7 +60,7 @@ public class Site {
         return maxRvLength;
     }
     public String maxRVToString(Integer maxRvLength) {
-        if (maxRvLength  == null) {
+        if (maxRvLength  == null || maxRvLength == 0) {
             return "N/A";
         }else{
             return maxRvLength.toString();

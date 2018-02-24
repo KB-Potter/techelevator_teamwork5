@@ -69,7 +69,7 @@ public class Park {
     }
 
     public String toString() {
-        return this.name;
+        return name;
     }
 
 }

@@ -5,11 +5,11 @@ import java.math.BigDecimal;
 public class Campground {
 
 	private long campgroundId;
-	private long parkId;							//need all of the variables in the tables from the database table
-	private String name; 			//getters and setters for both so we can call them in our menu/calls from table
-	private String openingDate; 		//this is the plain object, java object, we put all of the methods in here
-	private String closingDate; 			//the dao is where an abstract interface is made so we can refer to objects generically
-	private BigDecimal dailyFee; 			//the jdbc basically only exists to connect the sql stuff to java
+	private long parkId;
+	private String name;
+	private String openingDate;
+	private String closingDate;
+	private BigDecimal dailyFee;
 
 	public long getCampgroundId() {
 		return campgroundId;
@@ -60,12 +60,3 @@ public class Campground {
 	}
 }
 
-/* when we first open the application, we want a main menu, with options for seeing the parks, seeing the campgrounds, booking a site, and exits
- *
- *
- *
- *
- *
- *
- *
- */

@@ -19,7 +19,7 @@ public class Menu {
 
     private PrintWriter out;
     private Scanner in;
-    private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/LLLL/yyyy");
+    private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
 
     public Menu(InputStream input, OutputStream output) {
         this.out = new PrintWriter(output);
@@ -108,7 +108,7 @@ public class Menu {
                 return null;
             }
             for(Site site : siteArray) {
-                if(selectedNumber == site.getSiteNumber().intValue()) {
+                if(selectedNumber == site.getSiteNumber()) {
                     siteChoice = site;
                 }
             }
@@ -163,9 +163,9 @@ public class Menu {
 
     public void displayParkInfo(Park selectedPark) {
         String location = selectedPark.getLocation();
-        String established = selectedPark.getEstablishedDate().format(dateFormatter).toString();
-        String area = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getArea()).toString();
-        String visitors = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getVisitors()).toString();
+        String established = selectedPark.getEstablishedDate().format(dateFormatter);
+        String area = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getArea());
+        String visitors = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getVisitors());
 
         StringBuilder info = new StringBuilder();
         info.append(String.format("%-18s %s", "Location: ", location  + "\n"));
@@ -176,6 +176,7 @@ public class Menu {
         System.out.println();
         System.out.println(info);
 
+//        System.out.println(selectedPark.getDescription());
 
         StringBuilder description = new StringBuilder(selectedPark.getDescription());
         int i = 0;
@@ -232,10 +233,10 @@ public class Menu {
         Long daysBetween = ChronoUnit.DAYS.between(arrivalDate, departureDate);
         BigDecimal daysBetweenBD = new BigDecimal(daysBetween);
 
-        siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", "Site No.", "Max Occup.", "Accesible?", "Max RV Length", "Utility" ,"Cost" +"\n"));
+        siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", "Site No.", "Max Occup.", "Accessible?", "Max RV Length", "Utility" ,"Cost" +"\n"));
 
-        for(int i = 0; i < siteArray.length; i++) {
-            Site site = siteArray[i];
+        for (Site aSiteArray : siteArray) {
+            Site site = aSiteArray;
             siteNumber = site.getSiteNumber().toString();
             occupancy = site.getMaxOccupancy().toString();
             accessible = site.isAccessibleToString(site.isAccessible());
@@ -243,10 +244,10 @@ public class Menu {
             utility = site.isUtilitiesToString(site.isUtilities());
             cost = NumberFormat.getCurrencyInstance().format((campground.getDailyFee().multiply(daysBetweenBD)));
 
-            site = siteArray[i];
+            site = aSiteArray;
             siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", siteNumber, occupancy,
                     accessible, maxRVLength,
-                    utility, cost +  "\n"));
+                    utility, cost + "\n"));
         }
         System.out.println(siteString);
     }

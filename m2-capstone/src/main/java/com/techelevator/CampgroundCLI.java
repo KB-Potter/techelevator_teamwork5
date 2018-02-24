@@ -40,7 +40,7 @@ public class CampgroundCLI {
 
 	public static void main(String[] args) {
 		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/campground.sql");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/campground");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("postgres1");
 
@@ -49,7 +49,8 @@ public class CampgroundCLI {
 	}
 
 	public CampgroundCLI(DataSource datasource) {
-		this.menu = new Menu(System.in, System.out);
+		test:
+		menu = new Menu(System.in, System.out);
 
 		parkDAO = new JDBCParkDAO(datasource);
 		campgroundDAO = new JDBCCampgroundDAO(datasource);
@@ -65,7 +66,7 @@ public class CampgroundCLI {
 
 			printHeading("Select a park for further details");
 			Park[] databaseParksArray = parkOptionArrayCreation();
-			Park parkChoice = (Park)menu.getParkFromInput(databaseParksArray);
+			Park parkChoice = menu.getParkFromInput(databaseParksArray);
 			handleParkInformationScreen(parkChoice);
 		}
 	}
@@ -79,7 +80,7 @@ public class CampgroundCLI {
 
 		while(true) {
 
-			printHeading("Select A Command");
+			printHeading("Select a Command");
 			String choice = (String)menu.getChoiceFromOptions(PARKS_INFO_INTERFACE);
 			if(choice.equals(PARKS_INFO_INTERFACE_VIEW_CAMPGROUNDS)) {
 				handleViewCampgrounds(park, databaseCampgroundArray);
@@ -109,13 +110,13 @@ public class CampgroundCLI {
 
 	private void handleSearchForCampgroundReservation(Park park, Campground[] databaseCampgroundArray) {
 
-		menu.displayCampgrounds(park, databaseCampgroundArray);
+//		menu.displayCampgrounds(park, databaseCampgroundArray);
 		Campground campgroundChoice = new Campground();
 		LocalDate arrivalDate = null;
 		LocalDate departureDate = null;
 
 		while(true) {
-
+			menu.displayCampgrounds(park, databaseCampgroundArray);
 			System.out.println("Which campground (enter 0 to cancel)? ");
 			campgroundChoice = menu.getCampgroundSelectionFromUser(databaseCampgroundArray);
 			if(campgroundChoice == null) {
@@ -152,9 +153,12 @@ public class CampgroundCLI {
 		}
 
 		while(inMenu) {
-			System.out.println("Which site should be reserved (enter 0 to cancel)? "); //0 isnt breaking
+			System.out.println("Which site should be reserved (enter 0 to cancel)? ");
 			siteChoice = menu.getSiteSelectionFromUser(sitesInCampground);
-			if(campgroundChoice == null || campgroundChoice.equals("0")) {
+			if (siteChoice == null){
+				return;
+			}
+			if(campgroundChoice == null) {
 				break;
 			}
 			while(reservationName == null) {
