@@ -2,6 +2,10 @@ package com.techelevator.model.jdbc;
 
 import com.techelevator.model.Campground;
 import com.techelevator.model.Park;
+import com.techelevator.model.jdbc.JDBCCampgroundDAO;
+import com.techelevator.model.jdbc.JDBCParkDAO;
+import com.techelevator.model.jdbc.JDBCSiteDAO;
+import com.techelevator.projects.DAOIntegrationTest;
 import org.junit.*;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
@@ -11,7 +15,7 @@ import java.time.LocalDate;
 
 import static org.junit.Assert.*;
 
-public class JDBCSiteDAOTest {
+public class JDBCSiteDAOTest extends DAOIntegrationTest{
 
     private static SingleConnectionDataSource dataSource;
     private JDBCSiteDAO dao;
@@ -23,10 +27,11 @@ public class JDBCSiteDAOTest {
         dataSource = new SingleConnectionDataSource();
         dataSource.setUrl("jdbc:postgresql://localhost:5432/campground");
         dataSource.setUsername("postgres");
-        //password?
+        dataSource.setPassword("postgres1");
         dataSource.setAutoCommit(false);
 
     }
+
     @AfterClass
     public static void tearDownAfterClass() throws Exception{
         dataSource.destroy();

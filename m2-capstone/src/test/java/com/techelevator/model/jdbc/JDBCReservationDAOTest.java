@@ -5,6 +5,10 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 
+import com.techelevator.model.jdbc.JDBCCampgroundDAO;
+import com.techelevator.model.jdbc.JDBCParkDAO;
+import com.techelevator.model.jdbc.JDBCReservationDAO;
+import com.techelevator.model.jdbc.JDBCSiteDAO;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -26,7 +30,7 @@ public class JDBCReservationDAOTest {
         dataSource = new SingleConnectionDataSource();
         dataSource.setUrl("jdbc:postgresql://localhost:5432/campground");
         dataSource.setUsername("postgres");
-
+        dataSource.setPassword("postgres1");
         dataSource.setAutoCommit(false);
     }
 
