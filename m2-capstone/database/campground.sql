@@ -821,3 +821,36 @@ and site_id not in
 join reservation on reservation.site_id = site.site_id
 where '12/31/18' > reservation.from_date and '1/1/18' < reservation.to_date) order by daily_fee
 LIMIT 70;
+
+--Site search block availability
+SELECT * FROM site WHERE campground_id = 1 AND site_id NOT IN (SELECT site.site_id
+FROM reservation
+JOIN site ON site.site_id = reservation.site_id
+JOIN campground ON campground.campground_id = site.campground_id
+ WHERE site.campground_id = 1
+AND (('08/17/1982'  BETWEEN reservation.from_date AND reservation.to_date)
+OR ('08/18/1982'  BETWEEN reservation.from_date AND reservation.to_date)
+OR (reservation.from_date BETWEEN '08/17/1982' AND '08/18/1982')
+OR (reservation.to_date BETWEEN '08/17/1982' AND '08/18/1982')))
+AND max_rv_length > 0
+AND max_occupancy = 6
+AND max_rv_length = 20
+AND accessible = true
+AND utilities = true
+LIMIT 5;
+
+--Advanced search
+SELECT * FROM site WHERE campground_id = 1 AND site_id NOT IN (SELECT site.site_id
+FROM reservation
+JOIN site ON site.site_id = reservation.site_id
+JOIN campground ON campground.campground_id = site.campground_id
+ WHERE site.campground_id = 1
+AND (('08/17/1982'  BETWEEN reservation.from_date AND reservation.to_date)
+OR ('08/18/1982'  BETWEEN reservation.from_date AND reservation.to_date)
+OR (reservation.from_date BETWEEN '08/17/1982' AND '08/18/1982')
+OR (reservation.to_date BETWEEN '08/17/1982' AND '08/18/1982')))
+AND max_rv_length >= 0
+AND max_occupancy >= 6
+AND accessible = true OR accessible = false
+AND utilities = true OR accessible = false
+LIMIT 5;
