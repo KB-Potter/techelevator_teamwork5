@@ -51,6 +51,7 @@ public class JDBCSiteDAO implements SiteDAO {
         List<Site> availableSites = new ArrayList<>();
 
         System.out.println("Test");
+
         int maxRvLength = 12;
 
         String sqlAvailableSites = "SELECT * FROM site WHERE campground_id = ? AND site_id NOT IN (SELECT site.site_id  "
