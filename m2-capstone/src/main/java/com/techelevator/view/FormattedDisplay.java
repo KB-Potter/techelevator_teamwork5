@@ -9,11 +9,12 @@ import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 import java.util.Locale;
 
 public class FormattedDisplay {
 
-    public void displaySites(Site[] siteArray, Campground campground, LocalDate arrivalDate, LocalDate departureDate) {
+    public void displaySites(List<Site> sites, Campground campground, LocalDate arrivalDate, LocalDate departureDate) {
         System.out.println();
         System.out.println("Results Matching Your Search Criteria");
 
@@ -28,14 +29,14 @@ public class FormattedDisplay {
         Long daysBetween = ChronoUnit.DAYS.between(arrivalDate, departureDate);  //Get days between to pass to daily cost big decimal
         BigDecimal daysBetweenBD = new BigDecimal(daysBetween);
 
-        siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", "Site No.", "Max Occup.", "Accessible?", "Max RV Length", "Utility" ,"Cost" +"\n"));
+        siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", "Site No.", "Max Occup.", "Accessible?", "Max RV Length", "Utility", "Cost" + "\n"));
 
-        for (Site aSiteArray : siteArray) {
-            siteNumber = aSiteArray.getSiteId().toString();
-            occupancy = aSiteArray.getMaxOccupancy().toString();
-            accessible = aSiteArray.isAccessibleToString(aSiteArray.isAccessible());
-            maxRVLength = aSiteArray.maxRVToString(aSiteArray.getMaxRvLength());
-            utility = aSiteArray.isUtilitiesToString(aSiteArray.isUtilities());
+        for (Site site : sites) {
+            siteNumber = site.getSiteId().toString();
+            occupancy = site.getMaxOccupancy().toString();
+            accessible = site.isAccessibleToString(site.isAccessible());
+            maxRVLength = site.maxRVToString(site.getMaxRvLength());
+            utility = site.isUtilitiesToString(site.isUtilities());
             cost = NumberFormat.getCurrencyInstance().format((campground.getDailyFee().multiply(daysBetweenBD)));
 
             siteString.append(String.format("%-9s %-13s %-13s %-13s %-13s %s", siteNumber, occupancy,
@@ -45,13 +46,13 @@ public class FormattedDisplay {
         System.out.println(siteString);
     }
 
-    public void displayCampgrounds(Park park, Campground[] campgrounds) {
+    public void displayCampgrounds(Park park, List<Campground> campgrounds) {
         System.out.println();
         System.out.println(park.getName() + " National Park Campgrounds");
         System.out.println();
 
         String campName;
-        String dateNames[] = { "", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+        String dateNames[] = {"", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
         Integer openingDateInt;
         String openingDateString;
         Integer closingDateInt;
@@ -60,20 +61,19 @@ public class FormattedDisplay {
 
         StringBuilder campgroundsDisplayString = new StringBuilder();
         campgroundsDisplayString.append(String.format("%-5s %-25s %-15s %-13s %s", "", "Name", "Open", "Close", "Daily Fee" + "\n"));
+        int parkNumber = 0;
 
-        for(int i = 0; i < campgrounds.length; i++) {
-
-            campName = campgrounds[i].getName();
-            openingDateInt = Integer.parseInt(campgrounds[i].getOpeningDate());
+        for (Campground campground : campgrounds) {
+            campName = campground.getName();
+            openingDateInt = Integer.parseInt(campground.getOpeningDate());
             openingDateString = dateNames[openingDateInt];
-            closingDateInt = Integer.parseInt(campgrounds[i].getClosingDate());
+            closingDateInt = Integer.parseInt(campground.getClosingDate());
             closingDateString = dateNames[closingDateInt];
-            dailyFee = NumberFormat.getCurrencyInstance().format(campgrounds[i].getDailyFee());
-
-
-            campgroundsDisplayString.append(String.format("%-5s %-25s %-15s %-13s %s", "#" + (i+1), campName,
+            dailyFee = NumberFormat.getCurrencyInstance().format(campground.getDailyFee());
+            campgroundsDisplayString.append(String.format("%-5s %-25s %-15s %-13s %s", "#" + ++parkNumber, campName,
                     openingDateString, closingDateString, dailyFee + "\n"));
         }
+
         System.out.println(campgroundsDisplayString);
     }
 
@@ -86,15 +86,13 @@ public class FormattedDisplay {
         String visitors = NumberFormat.getNumberInstance(Locale.US).format(selectedPark.getVisitors());
 
         StringBuilder info = new StringBuilder();
-        info.append(String.format("%-18s %s", "Location: ", location  + "\n"));
+        info.append(String.format("%-18s %s", "Location: ", location + "\n"));
         info.append(String.format("%-18s %s", "Established: ", established + "\n"));
-        info.append(String.format("%-18s %s", "Area: ", area  + " sq km\n"));
-        info.append(String.format("%-18s %s", "Annual Visitors: ", visitors  + "\n"));
+        info.append(String.format("%-18s %s", "Area: ", area + " sq km\n"));
+        info.append(String.format("%-18s %s", "Annual Visitors: ", visitors + "\n"));
 
         System.out.println();
         System.out.println(info);
-
-//        System.out.println(selectedPark.getDescription());
 
         StringBuilder description = new StringBuilder(selectedPark.getDescription());
         int i = 0;

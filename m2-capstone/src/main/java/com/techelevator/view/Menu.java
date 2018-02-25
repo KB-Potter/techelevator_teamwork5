@@ -9,6 +9,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -23,7 +24,7 @@ public class Menu {
 
     public Object getChoiceFromOptions(Object[] options) {
         Object choice = null;
-        while(choice == null) {
+        while (choice == null) {
             displayMenuOptions(options);
             choice = getChoiceFromUserInput(options);
         }
@@ -35,102 +36,101 @@ public class Menu {
         String userInput = in.nextLine();
         try {
             int selectedOption = Integer.valueOf(userInput);
-            if(selectedOption > 0 && selectedOption <= options.length) {
+            if (selectedOption > 0 && selectedOption <= options.length) {
                 choice = options[selectedOption - 1];
             }
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             // eat the exception, an error message will be displayed below since choice will be null
         }
-        if(choice == null) {
-            out.println("\n*** "+userInput+" is not a valid option ***\n");
+        if (choice == null) {
+            out.println("\n*** " + userInput + " is not a valid option ***\n");
         }
         return choice;
     }
 
     private void displayMenuOptions(Object[] options) {
         out.println();
-        for(int i = 0; i < options.length; i++) {
-            int optionNum = i+1;
-            out.println(optionNum+") "+options[i]);
+        for (int i = 0; i < options.length; i++) {
+            int optionNum = i + 1;
+            out.println(optionNum + ") " + options[i]);
         }
         out.print("\nPlease choose an option >>> ");
         out.flush();
     }
 
-    public Park getParkFromInput(Park[] parkArray) {
+    public Park getParkFromInput(List<Park> parks) {
         Park choice = null;
-        while(choice == null) {
-            displayParkOptions(parkArray);
-            choice = getParkSelectionFromUser(parkArray);
+        while (choice == null) {
+            displayParkOptions(parks);
+            choice = getParkSelectionFromUser(parks);
         }
         return choice;
     }
 
-    private Park getParkSelectionFromUser(Park[] parkArray) {
+    private Park getParkSelectionFromUser(List<Park> parks) {
         Park parkChoice = null;
         String userInput = in.nextLine();
         try {
             int selectedNumber = Integer.valueOf(userInput);
-            if(selectedNumber <= parkArray.length) {
-                parkChoice = parkArray[selectedNumber - 1];
-            } else if(selectedNumber == parkArray.length + 1) {
+            if (selectedNumber <= parks.size()) {
+                parkChoice = parks.get(selectedNumber - 1);
+            } else if (selectedNumber == parks.size() + 1) {
                 System.exit(0);
             }
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
 
         }
-        if(parkChoice == null) {
+        if (parkChoice == null) {
             out.println("\n*** " + userInput + " is not a valid park ***\n");
         }
         return parkChoice;
     }
 
-    public Campground getCampgroundSelectionFromUser(Campground[] campgroundArray) {
+    public Campground getCampgroundSelectionFromUser(List<Campground> campgrounds) {
         Campground campgroundChoice = null;
         String userInput = in.nextLine();
         try {
             int selectedNumber = Integer.valueOf(userInput);
-            if(selectedNumber > 0 && selectedNumber <= campgroundArray.length) {
-                campgroundChoice = campgroundArray[selectedNumber -1];
+            if (selectedNumber > 0 && selectedNumber <= campgrounds.size()) {
+                campgroundChoice = campgrounds.get(selectedNumber - 1);
             } else if (selectedNumber == 0) {
                 return null;
             }
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
 
         }
-        if(campgroundChoice == null) {
+        if (campgroundChoice == null) {
             out.println("\n*** " + userInput + " is not a valid campground ***\n");
         }
         return campgroundChoice;
     }
 
-    public Site getSiteSelectionFromUser(Site[] siteArray) {
+    public Site getSiteSelectionFromUser(List<Site> sites) {
         Site siteChoice = null;
         String userInput = in.nextLine();
         try {
             int selectedNumber = Integer.valueOf(userInput);
-            if(selectedNumber == 0) {
+            if (selectedNumber == 0) {
                 return null;
             }
-            for(Site site : siteArray) {
-                if(selectedNumber == site.getSiteId()) { //Need check here for invalid site selection
+            for (Site site : sites) {
+                if (selectedNumber == site.getSiteId()) { //Need check here for invalid site selection
                     siteChoice = site;
                 }
             }
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
         }
-        if(siteChoice == null) {  //Check is coming too late
+        if (siteChoice == null) {  //Check is coming too late
 //            out.println("\n*** " + userInput + " is not a valid site ***\n");
         }
         return siteChoice;
     }
 
-
-    public String getReservationName(){
+    public String getReservationName() {
         return in.nextLine();
     }
 
-    public LocalDate getDateFromUser(){
+    public LocalDate getDateFromUser() {
         String userInput = in.nextLine();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy"); //Grabs a readable (US) input from user and format it for the computer
         LocalDate date;
@@ -143,13 +143,12 @@ public class Menu {
         return date;
     }
 
-
-    private void displayParkOptions(Park[] parkArray) {
+    private void displayParkOptions(List<Park> parks) {
         out.println();
         int number = 0;
-        for(int i = 0; i < parkArray.length; i++) {
-            number = i+1;
-            out.println(number + ") " + parkArray[i].getName());
+        for (int i = 0; i < parks.size(); i++) {
+            number = i + 1;
+            out.println(number + ") " + parks.get(i).getName());
         }
         number++;
         out.println(number + ") Quit");
