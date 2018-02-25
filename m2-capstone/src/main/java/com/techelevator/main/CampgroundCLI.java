@@ -1,10 +1,11 @@
-package com.techelevator;
+package com.techelevator.main;
 
 import com.techelevator.model.*;
 import com.techelevator.model.jdbc.JDBCCampgroundDAO;
 import com.techelevator.model.jdbc.JDBCParkDAO;
 import com.techelevator.model.jdbc.JDBCReservationDAO;
 import com.techelevator.model.jdbc.JDBCSiteDAO;
+import com.techelevator.view.FormattedDisplay;
 import com.techelevator.view.Menu;
 import org.apache.commons.dbcp2.BasicDataSource;
 
@@ -15,8 +16,9 @@ public class CampgroundCLI {
 
 	private static final String PARKS_INFO_INTERFACE_VIEW_CAMPGROUNDS = "View Campgrounds";
 	private static final String PARKS_INFO_INTERFACE_SEARCH_RESERVATION = "Search For Reservation";
+	private static final String PARKS_INFO_INTERFACE_ADVANCED_SEARCH = "Advanced Search";
 	private static final String PARKS_INFO_INTERFACE_RETURN = "Return to Previous Screen";
-	private static final String[] PARKS_INFO_INTERFACE = new String[] { PARKS_INFO_INTERFACE_VIEW_CAMPGROUNDS, PARKS_INFO_INTERFACE_SEARCH_RESERVATION, PARKS_INFO_INTERFACE_RETURN };
+	private static final String[] PARKS_INFO_INTERFACE = new String[] { PARKS_INFO_INTERFACE_VIEW_CAMPGROUNDS, PARKS_INFO_INTERFACE_SEARCH_RESERVATION, PARKS_INFO_INTERFACE_ADVANCED_SEARCH, PARKS_INFO_INTERFACE_RETURN };
 
 	private static final String PARK_CAMPGROUNDS_SEARCH_RESERVATIONS = "Search For Available Reservation";
 	private static final String PARK_CAMPGROUNDS_RETURN = "Return to Previous Screen";
@@ -27,7 +29,7 @@ public class CampgroundCLI {
 	private final CampgroundDAO campgroundDAO;
 	private final SiteDAO siteDAO;
 	private final ReservationDAO reservationDAO;
-
+	private final FormattedDisplay formattedDisplay;
 
 
 	public static void main(String[] args) {
@@ -47,6 +49,7 @@ public class CampgroundCLI {
 		campgroundDAO = new JDBCCampgroundDAO(datasource);
 		siteDAO = new JDBCSiteDAO(datasource);
 		reservationDAO = new JDBCReservationDAO(datasource);
+		formattedDisplay = new FormattedDisplay();
 	}
 
 	private void run() {
@@ -65,11 +68,11 @@ public class CampgroundCLI {
 	private void handleParkInformationScreen(Park park) {
 
 		printHeading(park.getName() + " National Park");
-		menu.displayParkInfo(park);
+		formattedDisplay.displayParkInfo(park);
 
 		Campground[] databaseCampgroundArray = campgroundOptionArrayCreation(park);
 
-		label:
+		top:
 		while (true) {
 
 			printHeading("Select a Command");
@@ -81,16 +84,26 @@ public class CampgroundCLI {
 				case PARKS_INFO_INTERFACE_SEARCH_RESERVATION:
 					handleSearchForCampgroundReservation(park, databaseCampgroundArray);
 					System.out.println();
-
 					break;
+				case PARKS_INFO_INTERFACE_ADVANCED_SEARCH:
+					handleAdvancedSearchSiteReservation();
 				case PARKS_INFO_INTERFACE_RETURN:
-					break label;
+					break top;
 			}
 		}
 	}
 
+	private void handleAdvancedSearchSiteReservation() {
+		System.out.println("What is the Max Occupancy you require?");
+		System.out.println("Do you need it to be wheelchairaccessible?");
+		System.out.println("Do you need an RV?");
+		System.out.println("What is the RV length?");
+		System.out.println("Do you need a utility hookup?");
+
+	}
+
 	private void handleViewCampgrounds(Park park, Campground[] databaseCampgroundArray) {
-		menu.displayCampgrounds(park, databaseCampgroundArray);
+		formattedDisplay.displayCampgrounds(park, databaseCampgroundArray);
 
 		while(true) {
 
@@ -109,7 +122,7 @@ public class CampgroundCLI {
 		LocalDate departureDate = null;
 
 		while (true) {
-			menu.displayCampgrounds(park, databaseCampgroundArray);
+			formattedDisplay.displayCampgrounds(park, databaseCampgroundArray);
 			System.out.println("Which campground (enter 0 to cancel)? ");
 			campgroundChoice = menu.getCampgroundSelectionFromUser(databaseCampgroundArray);
 			if (campgroundChoice == null) {
@@ -137,7 +150,7 @@ public class CampgroundCLI {
 
 		boolean inMenu = true;
 		Site[] sitesInCampground = siteOptionArrayCreation(campgroundChoice, arrivalDate, departureDate);
-		menu.displaySites(sitesInCampground, campgroundChoice, arrivalDate, departureDate);
+		formattedDisplay.displaySites(sitesInCampground, campgroundChoice, arrivalDate, departureDate);
 		Site siteChoice;
 		String reservationName = null;
 
@@ -191,6 +204,7 @@ public class CampgroundCLI {
 
 	private Site[] siteOptionArrayCreation(Campground campground, LocalDate arrivalDate, LocalDate departureDate) {
 		Site[] siteArray = new Site[siteDAO.getAvailableSites(campground, arrivalDate, departureDate).size()];
+//		Site[] siteArray = new Site[siteDAO.getAvailableSitesAdvanced(campground, arrivalDate, departureDate).size()]; //advance placeholder
 		for(int i = 0; i < siteDAO.getAvailableSites(campground, arrivalDate, departureDate).size(); i++) {
 			siteArray[i] = siteDAO.getAvailableSites(campground, arrivalDate, departureDate).get(i);
 		}
