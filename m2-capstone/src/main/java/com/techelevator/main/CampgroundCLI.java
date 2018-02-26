@@ -125,13 +125,13 @@ public class CampgroundCLI {
             if (campgroundChoice == null) {
                 break;
             }
-            while (arrivalDate == null) { //arrival ok, just departure
+            while (arrivalDate == null) {
                 System.out.println("What is the arrival date (MM/DD/YYYY)? ");
 
                 arrivalDate = menu.getDateFromUser();
 
             }
-            while (departureDate == null || departureDate.isBefore(arrivalDate)) { //5 digits breaks
+            while (departureDate == null || departureDate.isBefore(arrivalDate)) {
                 System.out.println("What is the departure date(MM/DD/YYYY)? ");
                 departureDate = menu.getDateFromUser();
             }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface ParkDAO {
 
-    public List<Park> getAllAvailableParks();
-    public Park getParkInformation(String parkName);
+    List<Park> getAllAvailableParks();
+    Park getParkInformation(String parkName);
 
 }

@@ -58,10 +58,10 @@ public class FormattedDisplay {
         Integer closingDateInt;
         String closingDateString;
         String dailyFee;
-
+        int parkNumber = 0;
         StringBuilder campgroundsDisplayString = new StringBuilder();
         campgroundsDisplayString.append(String.format("%-5s %-25s %-15s %-13s %s", "", "Name", "Open", "Close", "Daily Fee" + "\n"));
-        int parkNumber = 0;
+
 
         for (Campground campground : campgrounds) {
             campName = campground.getName();
@@ -70,6 +70,7 @@ public class FormattedDisplay {
             closingDateInt = Integer.parseInt(campground.getClosingDate());
             closingDateString = dateNames[closingDateInt];
             dailyFee = NumberFormat.getCurrencyInstance().format(campground.getDailyFee());
+
             campgroundsDisplayString.append(String.format("%-5s %-25s %-15s %-13s %s", "#" + ++parkNumber, campName,
                     openingDateString, closingDateString, dailyFee + "\n"));
         }

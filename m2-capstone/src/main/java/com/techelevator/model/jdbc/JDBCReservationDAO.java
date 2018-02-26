@@ -15,10 +15,10 @@ import com.techelevator.model.Site;
 
 public class JDBCReservationDAO implements ReservationDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public JDBCReservationDAO(DataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     @Override
@@ -55,8 +55,6 @@ public class JDBCReservationDAO implements ReservationDAO {
             return null;
         }
     }
-
-
 
     private Reservation mapRowToReservation(SqlRowSet results) {
 

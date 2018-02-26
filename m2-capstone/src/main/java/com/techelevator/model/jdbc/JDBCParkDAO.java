@@ -13,10 +13,10 @@ import com.techelevator.model.ParkDAO;
 
 public class JDBCParkDAO implements ParkDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public JDBCParkDAO(DataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     @Override

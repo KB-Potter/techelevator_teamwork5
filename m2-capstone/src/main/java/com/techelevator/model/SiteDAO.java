@@ -2,13 +2,11 @@ package com.techelevator.model;
 
 
 
-import java.util.List;
 import java.time.LocalDate;
-import com.techelevator.model.Site;
+import java.util.List;
 
 public interface SiteDAO {
-    public List<Site> getAvailableSites(Campground campground, LocalDate fromDate, LocalDate toDate);
-
-    public List<Site> getAvailableSitesAdvanced(Campground campground, LocalDate fromDate, LocalDate toDate);
+    List<Site> getAvailableSites(Campground campground, LocalDate fromDate, LocalDate toDate);
+    List<Site> getAvailableSitesAdvanced(Campground campground, LocalDate fromDate, LocalDate toDate);
 }
 

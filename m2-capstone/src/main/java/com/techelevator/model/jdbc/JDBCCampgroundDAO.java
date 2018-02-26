@@ -16,10 +16,10 @@ import com.techelevator.model.Park;
 
 public class JDBCCampgroundDAO implements CampgroundDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public JDBCCampgroundDAO(DataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     @Override

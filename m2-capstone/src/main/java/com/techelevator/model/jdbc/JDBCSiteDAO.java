@@ -18,10 +18,10 @@ import com.techelevator.model.SiteDAO;
 
 public class JDBCSiteDAO implements SiteDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public JDBCSiteDAO(DataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+        jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
     public List<Site> getAvailableSites(Campground campground, LocalDate arrivalDate, LocalDate departureDate){
